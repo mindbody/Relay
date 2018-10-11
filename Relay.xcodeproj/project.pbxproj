@@ -100,6 +100,18 @@
 		1B47E475216FE49B00940349 /* InjectDependenciesArgumentParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E44F216FE49A00940349 /* InjectDependenciesArgumentParserTests.swift */; };
 		1B47E476216FE49B00940349 /* InjectDependenciesArgumentParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E44F216FE49A00940349 /* InjectDependenciesArgumentParserTests.swift */; };
 		1B47E477216FE93800940349 /* DynamicDependencyTestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E44D216FE49A00940349 /* DynamicDependencyTestUtilities.swift */; };
+		1B47E48521700A2B00940349 /* LaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48221700A2B00940349 /* LaunchArgument.swift */; };
+		1B47E48621700A2B00940349 /* LaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48221700A2B00940349 /* LaunchArgument.swift */; };
+		1B47E48721700A2B00940349 /* LaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48221700A2B00940349 /* LaunchArgument.swift */; };
+		1B47E48821700A2B00940349 /* LaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48221700A2B00940349 /* LaunchArgument.swift */; };
+		1B47E48921700A2B00940349 /* DependencyInstructionLaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48321700A2B00940349 /* DependencyInstructionLaunchArgument.swift */; };
+		1B47E48A21700A2B00940349 /* DependencyInstructionLaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48321700A2B00940349 /* DependencyInstructionLaunchArgument.swift */; };
+		1B47E48B21700A2B00940349 /* DependencyInstructionLaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48321700A2B00940349 /* DependencyInstructionLaunchArgument.swift */; };
+		1B47E48C21700A2B00940349 /* DependencyInstructionLaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48321700A2B00940349 /* DependencyInstructionLaunchArgument.swift */; };
+		1B47E48D21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */; };
+		1B47E48E21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */; };
+		1B47E48F21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */; };
+		1B47E49021700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +178,9 @@
 		1B47E44E216FE49A00940349 /* DynamicDependencyRegistryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicDependencyRegistryTests.swift; sourceTree = "<group>"; };
 		1B47E44F216FE49A00940349 /* InjectDependenciesArgumentParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectDependenciesArgumentParserTests.swift; sourceTree = "<group>"; };
 		1B47E478216FF17100940349 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		1B47E48221700A2B00940349 /* LaunchArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArgument.swift; sourceTree = "<group>"; };
+		1B47E48321700A2B00940349 /* DependencyInstructionLaunchArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyInstructionLaunchArgument.swift; sourceTree = "<group>"; };
+		1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArgumentBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +282,7 @@
 		1B47E3B3216FE07600940349 /* RelayTests */ = {
 			isa = PBXGroup;
 			children = (
+				1B47E481217009FA00940349 /* LaunchArguments */,
 				1B47E44A216FE49A00940349 /* DependencyContainerTests.swift */,
 				1B47E442216FE49A00940349 /* DependencyInjectionInstructionTests.swift */,
 				1B47E443216FE49A00940349 /* DynamicDependencyIndexTests.swift */,
@@ -347,6 +363,16 @@
 				1B47E44D216FE49A00940349 /* DynamicDependencyTestUtilities.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		1B47E481217009FA00940349 /* LaunchArguments */ = {
+			isa = PBXGroup;
+			children = (
+				1B47E48321700A2B00940349 /* DependencyInstructionLaunchArgument.swift */,
+				1B47E48221700A2B00940349 /* LaunchArgument.swift */,
+				1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */,
+			);
+			path = LaunchArguments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -718,14 +744,17 @@
 				1B47E42D216FE34700940349 /* DynamicDependencyIndex.swift in Sources */,
 				1B47E409216FE34700940349 /* DependencyInjectionInstructionError.swift in Sources */,
 				1B47E431216FE34700940349 /* DependencyMetaContainer.swift in Sources */,
+				1B47E48D21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */,
 				1B47E415216FE34700940349 /* CommandLine+ArgumentParser.swift in Sources */,
 				1B47E3E1216FE34700940349 /* DependencyKey.swift in Sources */,
 				1B47E3FD216FE34700940349 /* DependencyFactoryIndexable.swift in Sources */,
 				1B47E401216FE34700940349 /* DependencyDefinition.swift in Sources */,
+				1B47E48921700A2B00940349 /* DependencyInstructionLaunchArgument.swift in Sources */,
 				1B47E41D216FE34700940349 /* ArgumentParser.swift in Sources */,
 				1B47E405216FE34700940349 /* DependencyTypeKey.swift in Sources */,
 				1B47E40D216FE34700940349 /* InjectDependenciesArgumentParser.swift in Sources */,
 				1B47E419216FE34700940349 /* DependencyInjectionInstruction.swift in Sources */,
+				1B47E48521700A2B00940349 /* LaunchArgument.swift in Sources */,
 				1B47E421216FE34700940349 /* DependencyTypeIndexable.swift in Sources */,
 				1B47E439216FE34700940349 /* DynamicDependencyRegistry.swift in Sources */,
 			);
@@ -742,14 +771,17 @@
 				1B47E42E216FE34700940349 /* DynamicDependencyIndex.swift in Sources */,
 				1B47E40A216FE34700940349 /* DependencyInjectionInstructionError.swift in Sources */,
 				1B47E432216FE34700940349 /* DependencyMetaContainer.swift in Sources */,
+				1B47E48E21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */,
 				1B47E416216FE34700940349 /* CommandLine+ArgumentParser.swift in Sources */,
 				1B47E3E2216FE34700940349 /* DependencyKey.swift in Sources */,
 				1B47E3FE216FE34700940349 /* DependencyFactoryIndexable.swift in Sources */,
 				1B47E402216FE34700940349 /* DependencyDefinition.swift in Sources */,
+				1B47E48A21700A2B00940349 /* DependencyInstructionLaunchArgument.swift in Sources */,
 				1B47E41E216FE34700940349 /* ArgumentParser.swift in Sources */,
 				1B47E406216FE34700940349 /* DependencyTypeKey.swift in Sources */,
 				1B47E40E216FE34700940349 /* InjectDependenciesArgumentParser.swift in Sources */,
 				1B47E41A216FE34700940349 /* DependencyInjectionInstruction.swift in Sources */,
+				1B47E48621700A2B00940349 /* LaunchArgument.swift in Sources */,
 				1B47E422216FE34700940349 /* DependencyTypeIndexable.swift in Sources */,
 				1B47E43A216FE34700940349 /* DynamicDependencyRegistry.swift in Sources */,
 			);
@@ -766,14 +798,17 @@
 				1B47E42F216FE34700940349 /* DynamicDependencyIndex.swift in Sources */,
 				1B47E40B216FE34700940349 /* DependencyInjectionInstructionError.swift in Sources */,
 				1B47E433216FE34700940349 /* DependencyMetaContainer.swift in Sources */,
+				1B47E48F21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */,
 				1B47E417216FE34700940349 /* CommandLine+ArgumentParser.swift in Sources */,
 				1B47E3E3216FE34700940349 /* DependencyKey.swift in Sources */,
 				1B47E3FF216FE34700940349 /* DependencyFactoryIndexable.swift in Sources */,
 				1B47E403216FE34700940349 /* DependencyDefinition.swift in Sources */,
+				1B47E48B21700A2B00940349 /* DependencyInstructionLaunchArgument.swift in Sources */,
 				1B47E41F216FE34700940349 /* ArgumentParser.swift in Sources */,
 				1B47E407216FE34700940349 /* DependencyTypeKey.swift in Sources */,
 				1B47E40F216FE34700940349 /* InjectDependenciesArgumentParser.swift in Sources */,
 				1B47E41B216FE34700940349 /* DependencyInjectionInstruction.swift in Sources */,
+				1B47E48721700A2B00940349 /* LaunchArgument.swift in Sources */,
 				1B47E423216FE34700940349 /* DependencyTypeIndexable.swift in Sources */,
 				1B47E43B216FE34700940349 /* DynamicDependencyRegistry.swift in Sources */,
 			);
@@ -790,14 +825,17 @@
 				1B47E430216FE34700940349 /* DynamicDependencyIndex.swift in Sources */,
 				1B47E40C216FE34700940349 /* DependencyInjectionInstructionError.swift in Sources */,
 				1B47E434216FE34700940349 /* DependencyMetaContainer.swift in Sources */,
+				1B47E49021700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */,
 				1B47E418216FE34700940349 /* CommandLine+ArgumentParser.swift in Sources */,
 				1B47E3E4216FE34700940349 /* DependencyKey.swift in Sources */,
 				1B47E400216FE34700940349 /* DependencyFactoryIndexable.swift in Sources */,
 				1B47E404216FE34700940349 /* DependencyDefinition.swift in Sources */,
+				1B47E48C21700A2B00940349 /* DependencyInstructionLaunchArgument.swift in Sources */,
 				1B47E420216FE34700940349 /* ArgumentParser.swift in Sources */,
 				1B47E408216FE34700940349 /* DependencyTypeKey.swift in Sources */,
 				1B47E410216FE34700940349 /* InjectDependenciesArgumentParser.swift in Sources */,
 				1B47E41C216FE34700940349 /* DependencyInjectionInstruction.swift in Sources */,
+				1B47E48821700A2B00940349 /* LaunchArgument.swift in Sources */,
 				1B47E424216FE34700940349 /* DependencyTypeIndexable.swift in Sources */,
 				1B47E43C216FE34700940349 /* DynamicDependencyRegistry.swift in Sources */,
 			);
