@@ -1,0 +1,12 @@
+language: swift
+osx_image: xcode10
+cache:
+- bundler: true
+install:
+- rake boot_simulators
+- bundle install
+- bundle exec danger
+- brew update
+- brew bundle
+script:
+- rake test

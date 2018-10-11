@@ -165,6 +165,7 @@
 		1B47E44D216FE49A00940349 /* DynamicDependencyTestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicDependencyTestUtilities.swift; sourceTree = "<group>"; };
 		1B47E44E216FE49A00940349 /* DynamicDependencyRegistryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicDependencyRegistryTests.swift; sourceTree = "<group>"; };
 		1B47E44F216FE49A00940349 /* InjectDependenciesArgumentParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectDependenciesArgumentParserTests.swift; sourceTree = "<group>"; };
+		1B47E478216FF17100940349 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +229,7 @@
 			children = (
 				1B47E34D216FD29C00940349 /* Sources */,
 				1B47E388216FDFF200940349 /* Tests */,
+				1B47E478216FF17100940349 /* Package.swift */,
 				1B47E34C216FD29C00940349 /* Products */,
 			);
 			sourceTree = "<group>";
