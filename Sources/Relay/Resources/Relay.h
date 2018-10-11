@@ -5,7 +5,7 @@
 //  Created by John Hammerlund on 10/11/18.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for Relay.
 FOUNDATION_EXPORT double RelayVersionNumber;
