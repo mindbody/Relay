@@ -9,11 +9,11 @@
 import Foundation
 
 /// A dependency component scope for injection
-struct DependencyContainerScope: Hashable {
+public struct DependencyContainerScope: Hashable {
 
-    let value: String
+    public let value: String
 
-    init(_ value: String) {
+    public init(_ value: String) {
         self.value = value
     }
 
@@ -21,8 +21,7 @@ struct DependencyContainerScope: Hashable {
 
 extension DependencyContainerScope {
 
-    static let global = DependencyContainerScope("global")
-
-    /// Add additional component scopes here
+    /// For application-wide injection
+    public static let global = DependencyContainerScope("global")
 
 }

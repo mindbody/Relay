@@ -9,7 +9,7 @@
 import Foundation
 
 /// A type that can parse and respond to command line arguments
-protocol ArgumentParser {
+public protocol ArgumentParser {
 
     /// Determines if the provided arguments can be parsed by the argument parser
     ///

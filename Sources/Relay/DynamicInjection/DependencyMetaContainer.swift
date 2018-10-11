@@ -9,19 +9,19 @@
 import Foundation
 
 /// Describes a DependencyContainer and all of its registered dependencies
-final class DependencyMetaContainer {
+public final class DependencyMetaContainer {
 
     /// The scope of injection
-    let scope: DependencyContainerScope
+    public let scope: DependencyContainerScope
     /// A list of injectable dependencies
-    let definitions: [DependencyDefinition]
+    public let definitions: [DependencyDefinition]
 
     /// Creates a new DependencyMetaContainer
     ///
     /// - Parameters:
     ///   - scope: The scope of injection
     ///   - definitions: A list of injectable dependencies
-    init(scope: DependencyContainerScope, definitions: [DependencyDefinition]) {
+    public init(scope: DependencyContainerScope, definitions: [DependencyDefinition]) {
         self.scope = scope
         self.definitions = definitions
     }

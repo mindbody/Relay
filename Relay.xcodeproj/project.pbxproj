@@ -88,7 +88,6 @@
 		1B47E456216FE49A00940349 /* DynamicDependencyIndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E443216FE49A00940349 /* DynamicDependencyIndexTests.swift */; };
 		1B47E457216FE49A00940349 /* DynamicDependencyIndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E443216FE49A00940349 /* DynamicDependencyIndexTests.swift */; };
 		1B47E458216FE49A00940349 /* DynamicDependencyIndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E443216FE49A00940349 /* DynamicDependencyIndexTests.swift */; };
-		1B47E467216FE49B00940349 /* DynamicDependencyTestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E449216FE49A00940349 /* DynamicDependencyTestUtilities.swift */; };
 		1B47E468216FE49B00940349 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E44A216FE49A00940349 /* DependencyContainerTests.swift */; };
 		1B47E469216FE49B00940349 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E44A216FE49A00940349 /* DependencyContainerTests.swift */; };
 		1B47E46A216FE49B00940349 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E44A216FE49A00940349 /* DependencyContainerTests.swift */; };
@@ -100,6 +99,7 @@
 		1B47E474216FE49B00940349 /* InjectDependenciesArgumentParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E44F216FE49A00940349 /* InjectDependenciesArgumentParserTests.swift */; };
 		1B47E475216FE49B00940349 /* InjectDependenciesArgumentParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E44F216FE49A00940349 /* InjectDependenciesArgumentParserTests.swift */; };
 		1B47E476216FE49B00940349 /* InjectDependenciesArgumentParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E44F216FE49A00940349 /* InjectDependenciesArgumentParserTests.swift */; };
+		1B47E477216FE93800940349 /* DynamicDependencyTestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E44D216FE49A00940349 /* DynamicDependencyTestUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,7 +161,6 @@
 		1B47E446216FE49A00940349 /* Info-Tests-macOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Tests-macOS.plist"; sourceTree = "<group>"; };
 		1B47E447216FE49A00940349 /* Info-Tests-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Tests-tvOS.plist"; sourceTree = "<group>"; };
 		1B47E448216FE49A00940349 /* Info-Tests-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Tests-iOS.plist"; sourceTree = "<group>"; };
-		1B47E449216FE49A00940349 /* DynamicDependencyTestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicDependencyTestUtilities.swift; path = Util/DynamicDependencyTestUtilities.swift; sourceTree = "<group>"; };
 		1B47E44A216FE49A00940349 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
 		1B47E44D216FE49A00940349 /* DynamicDependencyTestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicDependencyTestUtilities.swift; sourceTree = "<group>"; };
 		1B47E44E216FE49A00940349 /* DynamicDependencyRegistryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicDependencyRegistryTests.swift; sourceTree = "<group>"; };
@@ -270,7 +269,6 @@
 				1B47E442216FE49A00940349 /* DependencyInjectionInstructionTests.swift */,
 				1B47E443216FE49A00940349 /* DynamicDependencyIndexTests.swift */,
 				1B47E44E216FE49A00940349 /* DynamicDependencyRegistryTests.swift */,
-				1B47E449216FE49A00940349 /* DynamicDependencyTestUtilities.swift */,
 				1B47E44F216FE49A00940349 /* InjectDependenciesArgumentParserTests.swift */,
 				1B47E445216FE49A00940349 /* Resources */,
 				1B47E44C216FE49A00940349 /* Util */,
@@ -834,8 +832,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B47E455216FE49A00940349 /* DependencyInjectionInstructionTests.swift in Sources */,
+				1B47E477216FE93800940349 /* DynamicDependencyTestUtilities.swift in Sources */,
 				1B47E473216FE49B00940349 /* DynamicDependencyRegistryTests.swift in Sources */,
-				1B47E467216FE49B00940349 /* DynamicDependencyTestUtilities.swift in Sources */,
 				1B47E46A216FE49B00940349 /* DependencyContainerTests.swift in Sources */,
 				1B47E458216FE49A00940349 /* DynamicDependencyIndexTests.swift in Sources */,
 				1B47E476216FE49B00940349 /* InjectDependenciesArgumentParserTests.swift in Sources */,

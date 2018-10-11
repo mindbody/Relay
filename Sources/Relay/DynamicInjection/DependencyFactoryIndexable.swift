@@ -9,7 +9,7 @@
 import Foundation
 
 /// Provides an index of dependency factories
-protocol DependencyFactoryIndexable {
+public protocol DependencyFactoryIndexable {
 
     var index: [DependencyFactoryKey: (DependencyContainer) -> Any] { get }
 

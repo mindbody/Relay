@@ -13,19 +13,19 @@ import Foundation
 /// Type mismatches or unrecognized types/factories will cause a crash.
 ///
 /// **Example format**: `<run> -d type=AbstractType,factory=ConcreteType,scope=SampleViewController`
-final class InjectDependenciesArgumentParser: ArgumentParser {
+public final class InjectDependenciesArgumentParser: ArgumentParser {
 
     private let index: DynamicDependencyIndex
 
-    init(index: DynamicDependencyIndex = .shared) {
+    public init(index: DynamicDependencyIndex = .shared) {
         self.index = index
     }
 
-    func canParse(arguments: [String]) -> Bool {
+    public func canParse(arguments: [String]) -> Bool {
         return arguments.contains("-d") || arguments.contains("--dependency")
     }
 
-    func parse(arguments: [String]) throws {
+    public func parse(arguments: [String]) throws {
         var dependencyIdentifiers: [String] = []
 
         for index in 0..<arguments.count {

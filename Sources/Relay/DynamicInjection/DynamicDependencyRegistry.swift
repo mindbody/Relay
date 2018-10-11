@@ -11,7 +11,7 @@ import Foundation
 /// Registers dynamic dependencies
 ///
 /// - Note: Unresolved or mismatched types/factories will cause a crash
-final class DynamicDependencyRegistry: DependencyRegistryType {
+public final class DynamicDependencyRegistry: DependencyRegistryType {
 
     private let index: DynamicDependencyIndex
     private let metaContainers: [DependencyMetaContainer]
@@ -20,12 +20,12 @@ final class DynamicDependencyRegistry: DependencyRegistryType {
     ///
     /// - Parameter metaContainers: A list of container metatypes used to resolve
     ///   real types, factories, and DependencyContainers
-    init(index: DynamicDependencyIndex = .shared, metaContainers: [DependencyMetaContainer]) {
+    public init(index: DynamicDependencyIndex = .shared, metaContainers: [DependencyMetaContainer]) {
         self.index = index
         self.metaContainers = metaContainers
     }
 
-    func registerDependencies() throws {
+    public func registerDependencies() throws {
         /// Custom dependencies will override defaults
         for metaContainer in metaContainers {
             let container = DependencyContainer.container(for: metaContainer.scope)

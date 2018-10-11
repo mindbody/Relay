@@ -9,19 +9,19 @@
 import Foundation
 
 /// Describes an injectable dependency
-struct DependencyDefinition {
+public struct DependencyDefinition {
 
     /// The abstract type identifier
-    let typeIdentifier: DependencyTypeKey
+    public let typeIdentifier: DependencyTypeKey
     /// The concrete factory identifier
-    let factoryIdentifier: DependencyFactoryKey
+    public let factoryIdentifier: DependencyFactoryKey
 
     /// Creates a new DependencyDefinition
     ///
     /// - Parameters:
     ///   - typeIdentifier: The abstract type identifier
     ///   - factoryIdentifier: The concrete factory identifier
-    init(typeIdentifier: DependencyTypeKey, factoryIdentifier: DependencyFactoryKey) {
+    public init(typeIdentifier: DependencyTypeKey, factoryIdentifier: DependencyFactoryKey) {
         self.typeIdentifier = typeIdentifier
         self.factoryIdentifier = factoryIdentifier
     }

@@ -9,13 +9,13 @@
 import Foundation
 
 /// An IoC container used to resolve abstract dependencies
-final class DependencyContainer {
+public final class DependencyContainer {
 
     private static var containers: [DependencyContainerScope: DependencyContainer] = [:]
     private static let queue = DispatchQueue(label: "com.mindbodyonline.Relay.DependencyContainer")
 
     /// The default DependencyContainer with global scope
-    static var global: DependencyContainer = {
+    public static var global: DependencyContainer = {
         container(for: .global)
     }()
 
@@ -26,7 +26,7 @@ final class DependencyContainer {
     ///
     /// - Parameter componentScope: The scope of injection
     /// - Returns: A DependencyContainer
-    static func container(for componentScope: DependencyContainerScope) -> DependencyContainer {
+    public static func container(for componentScope: DependencyContainerScope) -> DependencyContainer {
         var container: DependencyContainer!
         queue.sync {
             if let existingContainer = DependencyContainer.containers[componentScope] {
@@ -49,7 +49,7 @@ final class DependencyContainer {
     /// - Parameters:
     ///   - type: The abstract dependency
     ///   - factory: The concrete factory for dependency resolution, executed once and only once
-    func register<T>(_ type: T.Type = T.self, with factory: @escaping (DependencyContainer) -> T) {
+    public func register<T>(_ type: T.Type = T.self, with factory: @escaping (DependencyContainer) -> T) {
         let key = keyFor(type)
         register(key: key, with: factory)
     }
@@ -59,7 +59,7 @@ final class DependencyContainer {
     /// - Parameters:
     ///   - key: A key used to uniquely identify an injected dependency
     ///   - factory: The dynamic factory for dependency resolution, executed once and only once
-    func register(key: DependencyKey, with factory: @escaping (DependencyContainer) -> Any) {
+    public func register(key: DependencyKey, with factory: @escaping (DependencyContainer) -> Any) {
         dependencies[key] = nil
         factories[key] = factory
     }
@@ -68,7 +68,7 @@ final class DependencyContainer {
     ///
     /// - Parameter dependencyType: The abstract dependency
     /// - Returns: A concrete implementor
-    func resolve<T>(_ dependencyType: T.Type = T.self) -> T {
+    public func resolve<T>(_ dependencyType: T.Type = T.self) -> T {
         let key = keyFor(dependencyType)
         if let resolved = dependencies[key] as? T {
             return resolved

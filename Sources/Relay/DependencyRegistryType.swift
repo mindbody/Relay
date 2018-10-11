@@ -9,7 +9,7 @@
 import Foundation
 
 /// Registers global and scoped dependencies to associated IoC containers
-protocol DependencyRegistryType {
+public protocol DependencyRegistryType {
 
     /// Registers dependencies to necessary IoC containers
     func registerDependencies() throws

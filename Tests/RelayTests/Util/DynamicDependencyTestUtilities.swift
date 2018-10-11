@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import Relay
+import Relay
 
 protocol DynamicTypeA { }
 protocol DynamicTypeB { }

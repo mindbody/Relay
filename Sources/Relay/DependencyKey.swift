@@ -9,18 +9,18 @@
 import Foundation
 
 /// Uniquely identifies an injected dependency
-struct DependencyKey: Hashable {
+public struct DependencyKey: Hashable {
 
-    static func == (lhs: DependencyKey, rhs: DependencyKey) -> Bool {
+    public static func == (lhs: DependencyKey, rhs: DependencyKey) -> Bool {
         return lhs.type == rhs.type
     }
 
     private let type: Any.Type
-    var hashValue: Int {
+    public var hashValue: Int {
         return "\(type)".hashValue
     }
 
-    init(_ type: Any.Type) {
+    public init(_ type: Any.Type) {
         self.type = type
     }
 

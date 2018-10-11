@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Relay
+import Relay
 
 // swiftlint:disable nesting
 

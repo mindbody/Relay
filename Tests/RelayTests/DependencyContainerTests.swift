@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Relay
+import Relay
 
 private protocol TypeA { }
 private protocol TypeB { }

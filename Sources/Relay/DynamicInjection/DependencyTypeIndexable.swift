@@ -9,7 +9,7 @@
 import Foundation
 
 /// Provides an index of dependency types
-protocol DependencyTypeIndexable {
+public protocol DependencyTypeIndexable {
 
     var index: [DependencyTypeKey: Any.Type] { get }
 

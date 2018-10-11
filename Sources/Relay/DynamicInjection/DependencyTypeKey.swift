@@ -9,18 +9,18 @@
 import Foundation
 
 /// Uniquely identifies an abstract type for dependency injection
-struct DependencyTypeKey: Hashable {
+public struct DependencyTypeKey: Hashable {
 
-    static func == (lhs: DependencyTypeKey, rhs: DependencyTypeKey) -> Bool {
+    public static func == (lhs: DependencyTypeKey, rhs: DependencyTypeKey) -> Bool {
         return lhs.tag == rhs.tag
     }
 
-    let tag: String
-    var hashValue: Int {
+    public let tag: String
+    public var hashValue: Int {
         return "\(tag)".hashValue
     }
 
-    init(_ tag: String) {
+    public init(_ tag: String) {
         self.tag = tag
     }
 

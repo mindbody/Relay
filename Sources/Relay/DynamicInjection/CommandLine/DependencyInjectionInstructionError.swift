@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DependencyInjectionInstructionError: LocalizedError {
+public enum DependencyInjectionInstructionError: LocalizedError {
 
     case malformattedDependencyParameter(String)
     case unrecognizedParameter(String)
@@ -16,7 +16,7 @@ enum DependencyInjectionInstructionError: LocalizedError {
     case missingFactory
     case missingDependencyIdentifier
 
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case let .malformattedDependencyParameter(parameter):
             return "Malformatted custom dependency parameter: \"\(parameter)\""
@@ -31,7 +31,7 @@ enum DependencyInjectionInstructionError: LocalizedError {
         }
     }
 
-    var recoverySuggestion: String? {
+    public var recoverySuggestion: String? {
         return "Dependency injection instructions should be formatted properly: 'type=<type>,factory=<factory>,scope=<scope>'"
     }
 

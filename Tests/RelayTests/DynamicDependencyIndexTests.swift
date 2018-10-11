@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Relay
+import Relay
 
 final class DynamicDependencyIndexTests: XCTestCase {
 
