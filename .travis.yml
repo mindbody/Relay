@@ -8,5 +8,25 @@ install:
 - bundle exec danger
 - brew update
 - brew bundle
-script:
-- rake test
+jobs:
+  include:
+  - stage: Test
+    name: "SwiftPM"
+    script:
+    - rake test_spm
+  - stage: Test
+    name: "iOS"
+    script:
+    - rake test_ios
+  - stage: Test
+    name: "macOS"
+    script:
+    - rake test_macos
+  - stage: Test
+    name: "tvOS"
+    script:
+    - rake test_tvos
+  - stage: Test
+    name: "watchOS"
+    script:
+    - rake test_watchos

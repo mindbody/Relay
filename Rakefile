@@ -1,84 +1,156 @@
-build_configurations = [
-	{
-		:scheme => "Relay-iOS",
-		:run_tests => true,
-		:destinations => [
-			"OS=9.3,name=iPhone 5S",
-			"OS=12.0,name=iPhone XS Max"
-		]
-	},
-	{
-		:scheme => "Relay-macOS",
-		:run_tests => true,
-		:destinations => [
-			"platform=OS X,arch=x86_64"
-		]
-	},
-	{
-		:scheme => "Relay-tvOS",
-		:run_tests => true,
-		:destinations => [
-			"OS=9.2,name=Apple TV 1080p",
-			"OS=12.0,name=Apple TV 4K"
-		]
-	},
-	{
-		:scheme => "Relay-watchOS",
-		:run_tests => false,
-		:destinations => [
-			"OS=latest,name=Apple Watch - 42mm"
-		]
-	}
-]
+$concurrent_destinations = 1
+$framework = "Relay"
 
-desc "Pre-boot test simulators"
-task :boot_simulators do
-	simulator_prefixes = [
-		"iPhone XS Max (12.0) [",
-		"iPhone 5S (9.3) [",
-		"Apple TV 1080p (9.2) [",
-		"Apple TV 4K (at 1080p) (12.0) ["
-	]
-	simulator_prefixes.each do |prefix|
-		execute "xcrun instruments -w '#{prefix}' || true"
-	end
-end
-
-desc "Build all targets"
-task :build do
-  build_configurations.each do |config|
-    scheme = config[:scheme]
-    destinations = config[:destinations].map { |destination| "-destination '#{destination}'" }.join(" ")
-    execute "xcodebuild -project Relay.xcodeproj -scheme #{scheme} #{destinations} -configuration Debug -quiet build analyze"
-  end
-end
-
-desc "Run all unit tests on all platforms"
-task :test do
-  execute "swift test --parallel"
-  build_configurations.each do |config|
-    scheme = config[:scheme]
-    destinations = config[:destinations].map { |destination| "-destination '#{destination}'" }.join(" ")
-
-    if config[:run_tests] then
-      execute "set -o pipefail && xcodebuild -project Relay.xcodeproj -scheme #{scheme} #{destinations} -configuration Debug -quiet build-for-testing analyze"
-      execute "set -o pipefail && xcodebuild -project Relay.xcodeproj -scheme #{scheme} #{destinations} -configuration Debug -quiet test-without-building"
-    else
-      execute "set -o pipefail && xcodebuild -project Relay.xcodeproj -scheme #{scheme} #{destinations} -configuration Debug -quiet build analyze"
-    end
-  end
+def build_matrix
+  return [
+    {
+      :scheme => "#{$framework}-iOS",
+      :run_tests => true,
+      :destinations => [
+        "OS=10.3.1,name=iPhone 5s",
+        "OS=latest,name=iPad Air 2"
+      ]
+    },
+    {
+      :scheme => "#{$framework}-macOS",
+      :run_tests => true,
+      :destinations => [
+        "platform=OS X,arch=x86_64"
+      ]
+    },
+    {
+      :scheme => "#{$framework}-tvOS",
+      :run_tests => true,
+      :destinations => [
+        "OS=10.2,name=Apple TV 1080p",
+        "OS=latest,name=Apple TV 4K"
+      ]
+    },
+    {
+      :scheme => "#{$framework}-watchOS",
+      :run_tests => false,
+      :destinations => [
+        "OS=latest,name=Apple Watch Series 2 - 38mm"
+      ]
+    }
+  ]
 end
 
 desc "Clean all builds"
 task :clean do
-  `swift package reset`
-  build_configurations.each do |config|
-    scheme = config[:scheme]
-    execute "set -o pipefail && xcodebuild -project Relay.xcodeproj -scheme #{scheme} -configuration Debug -quiet clean"
+  clean_all_schemes
+end
+
+desc "Update project dependencies"
+task :update do
+  update_dependencies
+end
+
+desc "Build all targets"
+task :build do
+  build_all_schemes
+end
+
+desc "Run all tests"
+task :test do
+  test_all_schemes
+end
+
+desc "Run all tests on SPM"
+task :test_spm do
+  test_spm
+end
+
+desc "Run all iOS tests"
+task :test_ios do
+  test_platform build_matrix.find { |config| config[:scheme] == "#{$framework}-iOS" }
+end
+
+desc "Run all macOS tests"
+task :test_macos do
+  test_platform build_matrix.find { |config| config[:scheme] == "#{$framework}-macOS" }
+end
+
+desc "Run all tvOS tests"
+task :test_tvos do
+  test_platform build_matrix.find { |config| config[:scheme] == "#{$framework}-tvOS" }
+end
+
+desc "Run all watchOS tests"
+task :test_watchos do
+  test_platform build_matrix.find { |config| config[:scheme] == "#{$framework}-watchOS" }
+end
+
+desc "Install CI dependencies"
+task :ci_install do
+  system("bundle install")
+  system("bundle exec danger")
+end
+
+
+#
+#  Utility functions for rake tasks. Can be overriden.
+#
+
+def clean_all_schemes
+  execute "swift package reset" if swift_package_manager
+  build_matrix.each do |config|
+    scheme =  config[:scheme]
+    execute "xcodebuild -scheme #{scheme} -quiet clean"
   end
 end
 
+def build_all_schemes
+  execute "swift build" if swift_package_manager
+  build_matrix.each do |config|
+    scheme =  config[:scheme]
+    destinations = config[:destinations].map { |destination| "-destination '#{destination}'" }.join(" ")
+    execute "xcodebuild -scheme #{scheme} -configuration Release #{destinations} -quiet build analyze"
+  end
+end
+
+def test_all_schemes
+  test_spm if swift_package_manager
+  build_matrix.each do |config|
+    test_platform config
+  end
+end
+
+def test_spm
+  execute "swift test --parallel"
+end
+
+def test_platform(config)
+  scheme =  config[:scheme]
+  destinations = config[:destinations].map { |destination| "-destination '#{destination}'" }.join(" ")
+  if config[:run_tests] then
+    execute "xcodebuild -scheme #{scheme} #{destinations} -quiet build-for-testing analyze"
+    execute "xcodebuild -scheme #{scheme} #{destinations} -quiet -disable-concurrent-destination-testing test-without-building"
+  else
+    execute "xcodebuild -scheme #{scheme} -configuration Release #{destinations} -quiet build analyze"
+  end
+end
+
+def swift_package_manager
+  return File.file?("Package.swift")
+end
+
+def bootstrap
+  execute "carthage bootstrap --cache-builds"
+end
+
+def update_dependencies
+  execute "carthage update --cache-builds"
+  execute "swift package update" if swift_package_manager
+end
+
 def execute(command)
-  puts "\n\e[36m======== EXECUTE: #{command} ========\e[39m\n"
-  system("set -o pipefail && #{command}") || exit(-1)
+  puts "\n\e[35m=== EXECUTE: #{command} ===\e[39m\n\n"
+  system(command) || fail_build
+  puts "\n\e[32m=== EXECUTE: Command exited with code 0. ===\e[39m\n\n"
+end
+
+def fail_build
+  puts "\n\e[101m=== EXECUTE: Command failed. ===\e[39m\e[49m\n\n"
+  exit -1
 end
