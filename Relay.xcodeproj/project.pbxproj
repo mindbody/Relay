@@ -282,7 +282,6 @@
 		1B47E3B3216FE07600940349 /* RelayTests */ = {
 			isa = PBXGroup;
 			children = (
-				1B47E481217009FA00940349 /* LaunchArguments */,
 				1B47E44A216FE49A00940349 /* DependencyContainerTests.swift */,
 				1B47E442216FE49A00940349 /* DependencyInjectionInstructionTests.swift */,
 				1B47E443216FE49A00940349 /* DynamicDependencyIndexTests.swift */,
@@ -302,6 +301,7 @@
 				1B47E3BD216FE34600940349 /* DependencyKey.swift */,
 				1B47E3D8216FE34700940349 /* DependencyRegistryType.swift */,
 				1B47E3C5216FE34700940349 /* DynamicInjection */,
+				1B47E481217009FA00940349 /* LaunchArguments */,
 				1B47E3BE216FE34600940349 /* Resources */,
 			);
 			path = Relay;
