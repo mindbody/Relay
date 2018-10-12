@@ -2,6 +2,10 @@ included:
   - Sources
   - Tests
 
+excluded:
+  - Tests/LinuxMain.swift
+  - Tests/RelayTests/XCTestManifests.swift
+
 line_length: 160
 statement_position:
   statement_mode: uncuddled_else
