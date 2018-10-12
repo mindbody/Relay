@@ -59,5 +59,13 @@ final class InjectDependenciesArgumentParserTests: XCTestCase {
         XCTAssertThrowsError(try sut.parse(arguments: commandLineArguments))
     }
 
+    func testCanOnlyParseDependencyFlags() throws {
+        let sut = InjectDependenciesArgumentParser()
+
+        XCTAssert(sut.canParse(arguments: ["-d"]))
+        XCTAssert(sut.canParse(arguments: ["--dependency"]))
+        XCTAssertFalse(sut.canParse(arguments: ["type=typeA,factory=factoryA"]))
+    }
+
 }
 // swiftlint:enable nesting
