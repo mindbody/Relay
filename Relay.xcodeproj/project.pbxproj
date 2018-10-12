@@ -125,6 +125,9 @@
 		1B47E48E21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */; };
 		1B47E48F21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */; };
 		1B47E49021700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */; };
+		1B77980E2171480D00DE8477 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B77980D2171480D00DE8477 /* XCTestManifests.swift */; };
+		1B77980F2171480D00DE8477 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B77980D2171480D00DE8477 /* XCTestManifests.swift */; };
+		1B7798102171480D00DE8477 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B77980D2171480D00DE8477 /* XCTestManifests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +201,8 @@
 		1B47E48221700A2B00940349 /* LaunchArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArgument.swift; sourceTree = "<group>"; };
 		1B47E48321700A2B00940349 /* DependencyInstructionLaunchArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyInstructionLaunchArgument.swift; sourceTree = "<group>"; };
 		1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArgumentBuilder.swift; sourceTree = "<group>"; };
+		1B779805217147D900DE8477 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
+		1B77980D2171480D00DE8477 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +306,7 @@
 		1B47E388216FDFF200940349 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				1B779805217147D900DE8477 /* LinuxMain.swift */,
 				1B47E3B3216FE07600940349 /* RelayTests */,
 			);
 			path = Tests;
@@ -317,6 +323,7 @@
 				1B47E44F216FE49A00940349 /* InjectDependenciesArgumentParserTests.swift */,
 				1B47E445216FE49A00940349 /* Resources */,
 				1B47E44C216FE49A00940349 /* Util */,
+				1B77980D2171480D00DE8477 /* XCTestManifests.swift */,
 			);
 			path = RelayTests;
 			sourceTree = "<group>";
@@ -883,6 +890,7 @@
 				1B47E46E216FE49B00940349 /* DynamicDependencyTestUtilities.swift in Sources */,
 				1B2D6B9C2171011800CCB604 /* DependencyInstructionLaunchArgumentTests.swift in Sources */,
 				1B47E468216FE49B00940349 /* DependencyContainerTests.swift in Sources */,
+				1B77980E2171480D00DE8477 /* XCTestManifests.swift in Sources */,
 				1B47E456216FE49A00940349 /* DynamicDependencyIndexTests.swift in Sources */,
 				1B2D6B982170FBB900CCB604 /* CommandLineExtensionTests.swift in Sources */,
 				1B2D6BA0217102B600CCB604 /* LaunchArgumentBuilderTests.swift in Sources */,
@@ -899,6 +907,7 @@
 				1B47E46F216FE49B00940349 /* DynamicDependencyTestUtilities.swift in Sources */,
 				1B2D6B9D2171011800CCB604 /* DependencyInstructionLaunchArgumentTests.swift in Sources */,
 				1B47E469216FE49B00940349 /* DependencyContainerTests.swift in Sources */,
+				1B77980F2171480D00DE8477 /* XCTestManifests.swift in Sources */,
 				1B47E457216FE49A00940349 /* DynamicDependencyIndexTests.swift in Sources */,
 				1B2D6B992170FBB900CCB604 /* CommandLineExtensionTests.swift in Sources */,
 				1B2D6BA1217102B600CCB604 /* LaunchArgumentBuilderTests.swift in Sources */,
@@ -915,6 +924,7 @@
 				1B47E473216FE49B00940349 /* DynamicDependencyRegistryTests.swift in Sources */,
 				1B2D6B9E2171011800CCB604 /* DependencyInstructionLaunchArgumentTests.swift in Sources */,
 				1B47E46A216FE49B00940349 /* DependencyContainerTests.swift in Sources */,
+				1B7798102171480D00DE8477 /* XCTestManifests.swift in Sources */,
 				1B47E458216FE49A00940349 /* DynamicDependencyIndexTests.swift in Sources */,
 				1B2D6B9A2170FBB900CCB604 /* CommandLineExtensionTests.swift in Sources */,
 				1B2D6BA2217102B600CCB604 /* LaunchArgumentBuilderTests.swift in Sources */,
