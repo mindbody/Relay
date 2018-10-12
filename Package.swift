@@ -1,7 +1,7 @@
 // swift-tools-version:4.2
 //
 //  Package.swift
-//  Conduit
+//  Relay
 //
 //  Created by John Hammerlund on 10/11/18.
 //  Copyright © 2018 MINDBODY. All rights reserved.
