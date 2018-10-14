@@ -22,26 +22,32 @@ install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then eval "$(curl -sL $SWIFTENV_INSTALL)"; fi
 jobs:
   include:
-  - stage: Cross-Platform Tests
-    name: "SPM"
+  - stage: Test
+    name: "SPM - Linux"
+    os: linux
     script:
       - rake test_spm
-  - stage: Cocoa Tests
+  - stage: Test
+    name: "SPM - macOS"
+    os: osx
+    script:
+      - rake test_spm
+  - stage: Test
     name: "iOS"
     os: osx
     script:
       - rake test_ios
-  - stage: Cocoa Tests
+  - stage: Test
     name: "macOS"
     os: osx
     script:
       - rake test_macos
-  - stage: Cocoa Tests
+  - stage: Test
     name: "tvOS"
     os: osx
     script:
       - rake test_tvos
-  - stage: Cocoa Tests
+  - stage: Test
     name: "watchOS"
     os: osx
     script:
