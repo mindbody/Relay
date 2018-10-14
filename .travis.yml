@@ -2,9 +2,7 @@ matrix:
   include:
     - os: osx
       osx_image: xcode10
-      language: generic
     - os: linux
-      language: generic
       sudo: required
       dist: trusty
       env:
