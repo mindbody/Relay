@@ -17,7 +17,7 @@ jobs:
       - SWIFT_VERSION=4.2
       - SWIFTENV_INSTALL="https://gist.githubusercontent.com/johnhammerlund/b4c3686e4270d463ef955c5a77f0b814/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh"
     install:
-      - curl -sL $SWIFTENV_INSTALL
+      - eval $(curl -sL $SWIFTENV_INSTALL)
     script:
       - rake test_spm
   - stage: Test
