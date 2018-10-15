@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum DynamicDependencyIndexError: Error {
+public enum DynamicDependencyIndexError: LocalizedError {
     case typeNotFound(identifier: String)
     case factoryNotFound(identifier: String)
 

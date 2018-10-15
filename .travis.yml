@@ -1,15 +1,4 @@
 osx_image: xcode10
-matrix:
-  include:
-    - os: osx
-    - os: linux
-      sudo: required
-      dist: trusty
-      env:
-        SWIFT_VERSION=4.2
-env:
-  global:
-    - SWIFTENV_INSTALL="https://gist.githubusercontent.com/johnhammerlund/b4c3686e4270d463ef955c5a77f0b814/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh"
 cache:
   - bundler: true
 install:
@@ -21,12 +10,17 @@ install:
 jobs:
   include:
   - stage: Test
-    name: "SPM - Linux"
+    name: "SwiftPM - Linux"
     os: linux
+    sudo: required
+    dist: trusty
+    env:
+      - SWIFT_VERSION=4.2
+      - SWIFTENV_INSTALL="https://gist.githubusercontent.com/johnhammerlund/b4c3686e4270d463ef955c5a77f0b814/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh"
     script:
       - rake test_spm
   - stage: Test
-    name: "SPM - macOS"
+    name: "SwiftPM - macOS"
     os: osx
     script:
       - rake test_spm
