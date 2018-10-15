@@ -14,15 +14,15 @@ let package = Package(
     products: [
         .library(
             name: "Relay",
-            targets: ["Relay"]),
+            targets: ["Relay"])
         ],
-    dependencies : [],
+    dependencies: [],
     targets: [
         .target(
             name: "Relay",
             dependencies: []),
         .testTarget(
             name: "RelayTests",
-            dependencies: ["Relay"]),
+            dependencies: ["Relay"])
         ]
 )
