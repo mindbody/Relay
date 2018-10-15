@@ -1,31 +1,47 @@
-language: swift
 osx_image: xcode10
 cache:
-- bundler: true
+  - bundler: true
 install:
-- bundle install
-- bundle exec danger
-- brew update
-- brew bundle
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then bundle install; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then bundle exec danger; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew bundle; fi
 jobs:
   include:
   - stage: Test
-    name: "SwiftPM"
+    name: "SwiftPM - Linux"
+    os: linux
+    sudo: required
+    dist: trusty
+    env:
+      - SWIFT_VERSION=4.2
+      - SWIFTENV_INSTALL="https://gist.githubusercontent.com/johnhammerlund/b4c3686e4270d463ef955c5a77f0b814/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh"
+    install:
+      - eval "$(curl -sL $SWIFTENV_INSTALL)"
     script:
-    - rake test_spm
+      - rake test_spm
+  - stage: Test
+    name: "SwiftPM - macOS"
+    os: osx
+    script:
+      - rake test_spm
   - stage: Test
     name: "iOS"
+    os: osx
     script:
-    - rake test_ios
+      - rake test_ios
   - stage: Test
     name: "macOS"
+    os: osx
     script:
-    - rake test_macos
+      - rake test_macos
   - stage: Test
     name: "tvOS"
+    os: osx
     script:
-    - rake test_tvos
+      - rake test_tvos
   - stage: Test
     name: "watchOS"
+    os: osx
     script:
-    - rake test_watchos
+      - rake test_watchos
