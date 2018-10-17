@@ -220,7 +220,7 @@ For efficiency and clean formatting, Relay provides a **LaunchArgumentBuilder**,
 
 For example, if our Xcode-built application has a suite of UI tests that need stubbed services, we can structure it as such:
 
-```
+```swift
 final class Suite12345Tests: XCTestCase {
 
   func testCase56789ShowsCorrectNumberOfCells() throws {
