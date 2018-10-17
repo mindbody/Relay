@@ -4,7 +4,7 @@ Relay is a dynamic dependency injection framework that uses IoC (Inversion of Co
 
 By passing a list of command line arguments, a driver program can instruct the system to inject specific dependencies (usually stubs) to keep integration predetermined and to maximize the number of valid assertions. For example, when running an iOS UI test via XCTest, we can instruct the application to inject stubbed backend services so that our UI tests only validate frontend behavior and layout.
 
-This framework aims to champion the [Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.htm). For most applications, this allows the separation of [UI tests](https://martinfowler.com/articles/practical-test-pyramid.html#UiTests) from [End-to-End tests](https://martinfowler.com/articles/practical-test-pyramid.html#End-to-endTests).
+This framework aims to champion the [Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html). For most applications, this allows the separation of [UI tests](https://martinfowler.com/articles/practical-test-pyramid.html#UiTests) from [End-to-End tests](https://martinfowler.com/articles/practical-test-pyramid.html#End-to-endTests).
 
 - [Requirements](#requirements)
 - [Installation](#installation)
