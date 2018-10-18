@@ -56,7 +56,7 @@ Relay uses IoC Containers at its foundation. For detailed information, see [Rela
 
 ### Create a Dependency Registry
 
-A **DependencyRegistry** is responsible for registering a concrete factory the resolvable types within in the application. Each registry does so by interacting with **DependencyContainers** (IoC Containers). Before a driver can inject its own dependencies, you must set up your project for dependency injection. Usually, a single registry is sufficient.
+A **DependencyRegistry** is responsible for registering concrete factories to resolvable types within the application. Each registry does so by interacting with **DependencyContainers** (IoC Containers). Before a driver can inject its own dependencies, you must set up your project for dependency injection. Usually, a single registry is sufficient.
 
 ```swift
 /// DefaultDependencyRegistry.swift
