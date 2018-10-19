@@ -12,25 +12,35 @@ import XCTest
 final class DependencyInjectionInstructionTests: XCTestCase {
 
     func testParsesCommandLineIdentifiers() throws {
-        let validIdentifier = "type=sampleType,factory=sampleFactory,scope=👌🏻"
+        let validIdentifier = "type=sampleType,factory=sampleFactory,scope=👌🏻,lifecycle=transient"
+        let validIdentifierWithoutLifecycle = "type=sampleType,factory=sampleFactory,scope=👌🏻"
         let validIdentiferWithoutScope = "type  =  sampleType2,     factory  =  sampleFactory2"
 
         var sut = try DependencyInjectionInstruction(commandLineIdentifier: validIdentifier)
         XCTAssertEqual(sut.typeIdentifier, "sampleType")
         XCTAssertEqual(sut.factoryIdentifier, "sampleFactory")
         XCTAssertEqual(sut.scope, "👌🏻")
+        XCTAssertEqual(sut.lifecycle, "transient")
+
+        sut = try DependencyInjectionInstruction(commandLineIdentifier: validIdentifierWithoutLifecycle)
+        XCTAssertEqual(sut.typeIdentifier, "sampleType")
+        XCTAssertEqual(sut.factoryIdentifier, "sampleFactory")
+        XCTAssertEqual(sut.scope, "👌🏻")
+        XCTAssertEqual(sut.lifecycle, "singleton")
 
         sut = try DependencyInjectionInstruction(commandLineIdentifier: validIdentiferWithoutScope)
         XCTAssertEqual(sut.typeIdentifier, "sampleType2")
         XCTAssertEqual(sut.factoryIdentifier, "sampleFactory2")
         XCTAssertEqual(sut.scope, "global")
+        XCTAssertEqual(sut.lifecycle, "singleton")
     }
 
     func testThrowsOnMalformattedParameters() throws {
         let malformattedIdentifiers = [
             "type=sampleType=,factory=sampleFactory",
             "type=,factory=sampleFactory",
-            "="
+            "=",
+            "type=sampleType,factory=sampleFactory,lifecycle=dead"
         ]
 
         for identifier in malformattedIdentifiers {

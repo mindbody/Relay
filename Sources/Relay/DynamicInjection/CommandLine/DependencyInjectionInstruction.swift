@@ -17,11 +17,14 @@ struct DependencyInjectionInstruction {
     let factoryIdentifier: String
     /// The component scope (defaults to "global")
     let scope: String
+    /// The lifecycle type (defaults to "singleton")
+    let lifecycle: String
 
-    init(typeIdentifier: String, factoryIdentifier: String, scope: String = "global") {
+    init(typeIdentifier: String, factoryIdentifier: String, scope: String = "global", lifecycle: String = LifecycleType.singleton.identifier) {
         self.typeIdentifier = typeIdentifier
         self.factoryIdentifier = factoryIdentifier
         self.scope = scope
+        self.lifecycle = lifecycle
     }
 
 }
@@ -30,13 +33,14 @@ extension DependencyInjectionInstruction {
 
     /// Creates a new DependencyInjectionInstruction from command line input
     ///
-    /// - Parameter commandLineIdentifier: The command line input, formatted as `type=<type>,factory=<factory>,scope=<scope>`
+    /// - Parameter commandLineIdentifier: The command line input, formatted as `type=<type>,factory=<factory>,scope=<scope>,lifecycle=<lifecycle>`
     init(commandLineIdentifier: String) throws {
         let parameters = commandLineIdentifier.components(separatedBy: ",")
 
         var typeTag: String?
         var factoryTag: String?
         var scope: String?
+        var lifecycle = LifecycleType.singleton.identifier
 
         for parameter in parameters {
             let keyValuePair = parameter.components(separatedBy: "=")
@@ -56,9 +60,16 @@ extension DependencyInjectionInstruction {
                 factoryTag = value
             case "scope":
                 scope = value
+            case "lifecycle":
+                lifecycle = value.lowercased()
             default:
                 throw DependencyInjectionInstructionError.unrecognizedParameter(parameter)
             }
+        }
+
+        let lifecycleIdentifiers = LifecycleType.allCases.map { $0.identifier }
+        guard lifecycleIdentifiers.contains(lifecycle) else {
+            throw DependencyInjectionInstructionError.malformattedDependencyParameter("lifecycle")
         }
 
         guard let type = typeTag else {
@@ -69,10 +80,10 @@ extension DependencyInjectionInstruction {
         }
 
         if let scope = scope {
-            self.init(typeIdentifier: type, factoryIdentifier: factory, scope: scope)
+            self.init(typeIdentifier: type, factoryIdentifier: factory, scope: scope, lifecycle: lifecycle)
         }
         else {
-            self.init(typeIdentifier: type, factoryIdentifier: factory)
+            self.init(typeIdentifier: type, factoryIdentifier: factory, lifecycle: lifecycle)
         }
     }
 

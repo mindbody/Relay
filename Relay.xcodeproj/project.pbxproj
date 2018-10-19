@@ -125,6 +125,14 @@
 		1B47E48E21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */; };
 		1B47E48F21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */; };
 		1B47E49021700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */; };
+		1B6B13D3217A7A9F004C1E76 /* LifecycleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B13D2217A7A9F004C1E76 /* LifecycleType.swift */; };
+		1B6B13D4217A7A9F004C1E76 /* LifecycleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B13D2217A7A9F004C1E76 /* LifecycleType.swift */; };
+		1B6B13D5217A7A9F004C1E76 /* LifecycleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B13D2217A7A9F004C1E76 /* LifecycleType.swift */; };
+		1B6B13D6217A7A9F004C1E76 /* LifecycleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B13D2217A7A9F004C1E76 /* LifecycleType.swift */; };
+		1B6B13DD217A8BD6004C1E76 /* LifecycleTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B13DC217A8BD6004C1E76 /* LifecycleTypeExtensions.swift */; };
+		1B6B13DE217A8BD6004C1E76 /* LifecycleTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B13DC217A8BD6004C1E76 /* LifecycleTypeExtensions.swift */; };
+		1B6B13DF217A8BD6004C1E76 /* LifecycleTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B13DC217A8BD6004C1E76 /* LifecycleTypeExtensions.swift */; };
+		1B6B13E0217A8BD6004C1E76 /* LifecycleTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B13DC217A8BD6004C1E76 /* LifecycleTypeExtensions.swift */; };
 		1B7798102171480D00DE8477 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B77980D2171480D00DE8477 /* XCTestManifests.swift */; };
 /* End PBXBuildFile section */
 
@@ -199,6 +207,8 @@
 		1B47E48221700A2B00940349 /* LaunchArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArgument.swift; sourceTree = "<group>"; };
 		1B47E48321700A2B00940349 /* DependencyInstructionLaunchArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyInstructionLaunchArgument.swift; sourceTree = "<group>"; };
 		1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArgumentBuilder.swift; sourceTree = "<group>"; };
+		1B6B13D2217A7A9F004C1E76 /* LifecycleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleType.swift; sourceTree = "<group>"; };
+		1B6B13DC217A8BD6004C1E76 /* LifecycleTypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleTypeExtensions.swift; sourceTree = "<group>"; };
 		1B779805217147D900DE8477 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 		1B77980D2171480D00DE8477 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -329,13 +339,14 @@
 		1B47E3B4216FE09300940349 /* Relay */ = {
 			isa = PBXGroup;
 			children = (
+				1B47E3C5216FE34700940349 /* DynamicInjection */,
+				1B47E481217009FA00940349 /* LaunchArguments */,
+				1B47E3BE216FE34600940349 /* Resources */,
 				1B47E3BC216FE34600940349 /* DependencyContainer.swift */,
 				1B47E3BB216FE34500940349 /* DependencyContainerScope.swift */,
 				1B47E3BD216FE34600940349 /* DependencyKey.swift */,
 				1B47E3D8216FE34700940349 /* DependencyRegistryType.swift */,
-				1B47E3C5216FE34700940349 /* DynamicInjection */,
-				1B47E481217009FA00940349 /* LaunchArguments */,
-				1B47E3BE216FE34600940349 /* Resources */,
+				1B6B13D2217A7A9F004C1E76 /* LifecycleType.swift */,
 			);
 			path = Relay;
 			sourceTree = "<group>";
@@ -377,6 +388,7 @@
 				1B47E3CD216FE34700940349 /* CommandLine+ArgumentParser.swift */,
 				1B47E3CE216FE34700940349 /* DependencyInjectionInstruction.swift */,
 				1B47E3CF216FE34700940349 /* ArgumentParser.swift */,
+				1B6B13DC217A8BD6004C1E76 /* LifecycleTypeExtensions.swift */,
 			);
 			path = CommandLine;
 			sourceTree = "<group>";
@@ -781,6 +793,7 @@
 				1B47E48D21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */,
 				1B47E415216FE34700940349 /* CommandLine+ArgumentParser.swift in Sources */,
 				1B47E3E1216FE34700940349 /* DependencyKey.swift in Sources */,
+				1B6B13DD217A8BD6004C1E76 /* LifecycleTypeExtensions.swift in Sources */,
 				1B47E3FD216FE34700940349 /* DependencyFactoryIndexable.swift in Sources */,
 				1B47E401216FE34700940349 /* DependencyDefinition.swift in Sources */,
 				1B47E48921700A2B00940349 /* DependencyInstructionLaunchArgument.swift in Sources */,
@@ -791,6 +804,7 @@
 				1B47E419216FE34700940349 /* DependencyInjectionInstruction.swift in Sources */,
 				1B47E48521700A2B00940349 /* LaunchArgument.swift in Sources */,
 				1B47E421216FE34700940349 /* DependencyTypeIndexable.swift in Sources */,
+				1B6B13D3217A7A9F004C1E76 /* LifecycleType.swift in Sources */,
 				1B47E439216FE34700940349 /* DynamicDependencyRegistry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -809,6 +823,7 @@
 				1B47E48E21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */,
 				1B47E416216FE34700940349 /* CommandLine+ArgumentParser.swift in Sources */,
 				1B47E3E2216FE34700940349 /* DependencyKey.swift in Sources */,
+				1B6B13DE217A8BD6004C1E76 /* LifecycleTypeExtensions.swift in Sources */,
 				1B47E3FE216FE34700940349 /* DependencyFactoryIndexable.swift in Sources */,
 				1B47E402216FE34700940349 /* DependencyDefinition.swift in Sources */,
 				1B47E48A21700A2B00940349 /* DependencyInstructionLaunchArgument.swift in Sources */,
@@ -819,6 +834,7 @@
 				1B47E41A216FE34700940349 /* DependencyInjectionInstruction.swift in Sources */,
 				1B47E48621700A2B00940349 /* LaunchArgument.swift in Sources */,
 				1B47E422216FE34700940349 /* DependencyTypeIndexable.swift in Sources */,
+				1B6B13D4217A7A9F004C1E76 /* LifecycleType.swift in Sources */,
 				1B47E43A216FE34700940349 /* DynamicDependencyRegistry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -837,6 +853,7 @@
 				1B47E48F21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */,
 				1B47E417216FE34700940349 /* CommandLine+ArgumentParser.swift in Sources */,
 				1B47E3E3216FE34700940349 /* DependencyKey.swift in Sources */,
+				1B6B13DF217A8BD6004C1E76 /* LifecycleTypeExtensions.swift in Sources */,
 				1B47E3FF216FE34700940349 /* DependencyFactoryIndexable.swift in Sources */,
 				1B47E403216FE34700940349 /* DependencyDefinition.swift in Sources */,
 				1B47E48B21700A2B00940349 /* DependencyInstructionLaunchArgument.swift in Sources */,
@@ -847,6 +864,7 @@
 				1B47E41B216FE34700940349 /* DependencyInjectionInstruction.swift in Sources */,
 				1B47E48721700A2B00940349 /* LaunchArgument.swift in Sources */,
 				1B47E423216FE34700940349 /* DependencyTypeIndexable.swift in Sources */,
+				1B6B13D5217A7A9F004C1E76 /* LifecycleType.swift in Sources */,
 				1B47E43B216FE34700940349 /* DynamicDependencyRegistry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -865,6 +883,7 @@
 				1B47E49021700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */,
 				1B47E418216FE34700940349 /* CommandLine+ArgumentParser.swift in Sources */,
 				1B47E3E4216FE34700940349 /* DependencyKey.swift in Sources */,
+				1B6B13E0217A8BD6004C1E76 /* LifecycleTypeExtensions.swift in Sources */,
 				1B47E400216FE34700940349 /* DependencyFactoryIndexable.swift in Sources */,
 				1B47E404216FE34700940349 /* DependencyDefinition.swift in Sources */,
 				1B47E48C21700A2B00940349 /* DependencyInstructionLaunchArgument.swift in Sources */,
@@ -875,6 +894,7 @@
 				1B47E41C216FE34700940349 /* DependencyInjectionInstruction.swift in Sources */,
 				1B47E48821700A2B00940349 /* LaunchArgument.swift in Sources */,
 				1B47E424216FE34700940349 /* DependencyTypeIndexable.swift in Sources */,
+				1B6B13D6217A7A9F004C1E76 /* LifecycleType.swift in Sources */,
 				1B47E43C216FE34700940349 /* DynamicDependencyRegistry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

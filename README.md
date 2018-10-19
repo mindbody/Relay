@@ -149,7 +149,7 @@ Types to factories are one-to-many, so you may end up creating multiple types th
 ```swift
 /// TestSuite12345DependencyFactoryIndex.swift
 
-TestSuite12345DependencyFactoryIndex: DependencyFactoryIndexable {
+final class TestSuite12345DependencyFactoryIndex: DependencyFactoryIndexable {
   let index: [DependencyFactoryKey: (DependencyContainer) -> Any] = TestSuite12345DependencyFactoryIndex.makeIndex()
 
   private static func makeIndex() -> [DependencyFactoryKey: (DependencyContainer) -> Any] {
@@ -173,13 +173,14 @@ Pulling it all together, Relay provides tools to register these dynamic dependen
 These arguments are formatted as such:
 
 ```
-[program-run] [-d, --dependency] type=<type>,factory=<factory>[,scope=<scope>]
+[program-run] [-d, --dependency] type=<type>,factory=<factory>[,scope=<scope>][,lifecycle=<lifecyle>]
 ```
 
 The value passed to `--dependency` is called a **DependencyInjectionInstruction**. The input parameters describe:
 - `type`: The type identifier, which should match the target `DependencyTypeKey`
 - `factory`: The factory identifier, which should match the target `DependencyFactoryKey`
 - `scope`: The scope identifier, or "global" if not specified
+- `lifecycle`: The dependency lifecycle type (singleton|transient), or "singleton" if not specified
 
 These arguments are provided to an **InjectDependenciesArgumentParser**, which communicates with a `DynamicDependencyRegistry`. For Xcode projects, you'll need to update your `AppDelegate`:
 

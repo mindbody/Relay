@@ -50,7 +50,8 @@ public final class InjectDependenciesArgumentParser: ArgumentParser {
 
             for instruction in instructions {
                 let definition = DependencyDefinition(typeIdentifier: DependencyTypeKey(instruction.typeIdentifier),
-                                                      factoryIdentifier: DependencyFactoryKey(instruction.factoryIdentifier))
+                                                      factoryIdentifier: DependencyFactoryKey(instruction.factoryIdentifier),
+                                                      lifecycle: LifecycleType(identifier: instruction.lifecycle) ?? .singleton)
                 definitions.append(definition)
             }
 
