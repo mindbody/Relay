@@ -33,7 +33,7 @@ public final class DynamicDependencyRegistry: DependencyRegistryType {
                 let type = try index.lookup(type: definition.typeIdentifier)
                 let factory = try index.lookup(factory: definition.factoryIdentifier)
 
-                container.register(key: DependencyKey(type), with: factory)
+                container.register(key: DependencyKey(type), lifecycle: definition.lifecycle, with: factory)
             }
         }
 

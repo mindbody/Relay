@@ -34,11 +34,11 @@ final class DynamicDependencyRegistryTests: XCTestCase {
         let customScope = DependencyContainerScope(#function)
         let metaContainers = [
             DependencyMetaContainer(scope: .global, definitions: [
-                DependencyDefinition(typeIdentifier: .dynamicTypeA, factoryIdentifier: .dynamicFactoryA),
-                DependencyDefinition(typeIdentifier: .dynamicTypeB, factoryIdentifier: .dynamicFactoryB)
+                DependencyDefinition(typeIdentifier: .dynamicTypeA, factoryIdentifier: .dynamicFactoryA, lifecycle: .singleton),
+                DependencyDefinition(typeIdentifier: .dynamicTypeB, factoryIdentifier: .dynamicFactoryB, lifecycle: .singleton)
                 ]),
             DependencyMetaContainer(scope: customScope, definitions: [
-                DependencyDefinition(typeIdentifier: .dynamicTypeC, factoryIdentifier: .dynamicFactoryC)
+                DependencyDefinition(typeIdentifier: .dynamicTypeC, factoryIdentifier: .dynamicFactoryC, lifecycle: .singleton)
                 ])
         ]
 
@@ -57,7 +57,7 @@ final class DynamicDependencyRegistryTests: XCTestCase {
         let factoryA: (DependencyContainer) -> Any = { _ in ImplementsDynamicTypeA() }
 
         let metaContainer = DependencyMetaContainer(scope: .global, definitions: [
-            DependencyDefinition(typeIdentifier: .dynamicTypeA, factoryIdentifier: .dynamicFactoryA)
+            DependencyDefinition(typeIdentifier: .dynamicTypeA, factoryIdentifier: .dynamicFactoryA, lifecycle: .singleton)
             ])
 
         let factoryIndex = TestDynamicFactoryIndex(index: [.dynamicFactoryA: factoryA])
@@ -70,7 +70,7 @@ final class DynamicDependencyRegistryTests: XCTestCase {
 
     func testThrowsForUnknownFactories() throws {
         let metaContainer = DependencyMetaContainer(scope: .global, definitions: [
-            DependencyDefinition(typeIdentifier: .dynamicTypeA, factoryIdentifier: .dynamicFactoryA)
+            DependencyDefinition(typeIdentifier: .dynamicTypeA, factoryIdentifier: .dynamicFactoryA, lifecycle: .singleton)
             ])
 
         let typeIndex = TestDynamicTypeIndex(index: [.dynamicTypeA: DynamicTypeA.self])

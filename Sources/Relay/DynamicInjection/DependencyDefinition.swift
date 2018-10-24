@@ -15,15 +15,18 @@ public struct DependencyDefinition {
     public let typeIdentifier: DependencyTypeKey
     /// The concrete factory identifier
     public let factoryIdentifier: DependencyFactoryKey
+    ///
+    public let lifecycle: LifecycleType
 
     /// Creates a new DependencyDefinition
     ///
     /// - Parameters:
     ///   - typeIdentifier: The abstract type identifier
     ///   - factoryIdentifier: The concrete factory identifier
-    public init(typeIdentifier: DependencyTypeKey, factoryIdentifier: DependencyFactoryKey) {
+    public init(typeIdentifier: DependencyTypeKey, factoryIdentifier: DependencyFactoryKey, lifecycle: LifecycleType) {
         self.typeIdentifier = typeIdentifier
         self.factoryIdentifier = factoryIdentifier
+        self.lifecycle = lifecycle
     }
 
 }

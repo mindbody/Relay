@@ -15,6 +15,7 @@ private protocol TypeC { }
 private protocol TypeD: class { }
 private protocol TypeE: class { }
 private protocol TypeF: class { }
+private protocol TypeG: class { }
 
 // swiftlint:disable nesting
 final class DependencyContainerTests: XCTestCase {
@@ -52,12 +53,23 @@ final class DependencyContainerTests: XCTestCase {
         XCTAssert(sut.resolve(TypeC.self) is ImplementsC)
     }
 
-    func testLazyLoadsDependencies() throws {
+    func testLazyLoadsSingletonDependencies() throws {
         class ImplementsD: TypeD { }
 
         DependencyContainer.global.register(TypeD.self) { _ in ImplementsD() }
         let dependency = DependencyContainer.global.resolve(TypeD.self)
         XCTAssert(dependency === DependencyContainer.global.resolve(TypeD.self))
+    }
+
+    func testSpawnsTransientDependencies() throws {
+        class ImplementsG: TypeG { }
+
+        let scope = DependencyContainerScope(#function)
+        let sut = DependencyContainer.container(for: scope)
+
+        sut.register(TypeG.self, lifecycle: .transient) { _ in ImplementsG() }
+
+        XCTAssertFalse(sut.resolve(TypeG.self) === sut.resolve(TypeG.self))
     }
 
     func testResolvesLazyCircularDependencies() throws {

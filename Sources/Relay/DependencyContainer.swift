@@ -12,7 +12,7 @@ import Foundation
 public final class DependencyContainer {
 
     private static var containers: [DependencyContainerScope: DependencyContainer] = [:]
-    private static let queue = DispatchQueue(label: "com.mindbodyonline.Relay.DependencyContainer")
+    private static let queue = DispatchQueue(label: "com.mindbodyonline.Relay.DependencyContainer.static")
 
     /// The default DependencyContainer with global scope
     public static var global: DependencyContainer = {
@@ -20,7 +20,9 @@ public final class DependencyContainer {
     }()
 
     private var factories: [DependencyKey: (DependencyContainer) -> Any] = [:]
-    private var dependencies: [DependencyKey: Any] = [:]
+    private var singletonDependencies: [DependencyKey: Any] = [:]
+    private var lifecycles: [DependencyKey: LifecycleType] = [:]
+    private var instanceQueue = DispatchQueue(label: "com.mindbodyonline.Relay.DependencyContainer.static")
 
     /// Returns a DependencyContainer with given scope. If unavailable, then a new one is created.
     ///
@@ -48,20 +50,25 @@ public final class DependencyContainer {
     ///
     /// - Parameters:
     ///   - type: The abstract dependency
+    ///   - lifecycle: Determines the dependency lifetime. Defaults to `.singleton`
     ///   - factory: The concrete factory for dependency resolution, executed once and only once
-    public func register<T>(_ type: T.Type = T.self, with factory: @escaping (DependencyContainer) -> T) {
+    public func register<T>(_ type: T.Type = T.self, lifecycle: LifecycleType = .singleton, with factory: @escaping (DependencyContainer) -> T) {
         let key = keyFor(type)
-        register(key: key, with: factory)
+        register(key: key, lifecycle: lifecycle, with: factory)
     }
 
     /// Registers a dynamic factory for an abstract dependency
     ///
     /// - Parameters:
     ///   - key: A key used to uniquely identify an injected dependency
+    ///   - lifecycle: Determines the dependency lifetime. Defaults to `.singleton`
     ///   - factory: The dynamic factory for dependency resolution, executed once and only once
-    public func register(key: DependencyKey, with factory: @escaping (DependencyContainer) -> Any) {
-        dependencies[key] = nil
-        factories[key] = factory
+    public func register(key: DependencyKey, lifecycle: LifecycleType = .singleton, with factory: @escaping (DependencyContainer) -> Any) {
+        instanceQueue.sync {
+            singletonDependencies[key] = nil
+            lifecycles[key] = lifecycle
+            factories[key] = factory
+        }
     }
 
     /// Resolves a concrete type from an abstract dependency
@@ -70,11 +77,13 @@ public final class DependencyContainer {
     /// - Returns: A concrete implementor
     public func resolve<T>(_ dependencyType: T.Type = T.self) -> T {
         let key = keyFor(dependencyType)
-        if let resolved = dependencies[key] as? T {
+        let lifecycle = lifecycles[key] ?? .singleton
+
+        if lifecycle == .singleton, let resolved = singletonDependencies[key] as? T {
             return resolved
         }
         guard let found = factories[keyFor(dependencyType)]?(self) else {
-            if self === DependencyContainer.global {
+            if lifecycle == .transient || self === DependencyContainer.global {
                 fatalError("Failed to resolve dependency for '\(dependencyType)'")
             }
             return DependencyContainer.global.resolve(dependencyType)
@@ -82,7 +91,7 @@ public final class DependencyContainer {
         guard let resolved = found as? T else {
             fatalError("Dependency mismatch; expected type \"\(T.self)\", got \"\(type(of: found))\"")
         }
-        dependencies[key] = resolved
+        singletonDependencies[key] = resolved
         return resolved
     }
 

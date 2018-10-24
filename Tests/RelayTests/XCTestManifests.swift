@@ -11,10 +11,11 @@ extension CommandLineExtensionTests {
 extension DependencyContainerTests {
     static let __allTests = [
         ("testComponentContainersFallBackToGlobalScope", testComponentContainersFallBackToGlobalScope),
-        ("testLazyLoadsDependencies", testLazyLoadsDependencies),
+        ("testLazyLoadsSingletonDependencies", testLazyLoadsSingletonDependencies),
         ("testRegistersTypes", testRegistersTypes),
         ("testRegistersTypesAtComponentScope", testRegistersTypesAtComponentScope),
         ("testResolvesLazyCircularDependencies", testResolvesLazyCircularDependencies),
+        ("testSpawnsTransientDependencies", testSpawnsTransientDependencies),
     ]
 }
 
