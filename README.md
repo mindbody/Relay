@@ -19,6 +19,8 @@ This framework aims to champion the [Test Pyramid](https://martinfowler.com/arti
   - [Command Line Injection](#command-line-injection)
   - [Driver Tests](#driver-tests)
 - [Advanced Topics](#advanced-topics)
+  - [Dependency Lifecyclex](#dependency-lifecycles)
+  - [Container Scope](#container-scope)
 
 ## Requirements
 - iOS 8.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+ / Linux
@@ -245,4 +247,66 @@ This is just a rough example, but a starting point for converting end-to-end tes
 
 ## Advanced Topics
 
-Coming Soon
+### Dependency Lifecycles
+
+By default, Relay dependencies are lazily created using their type-mapped concrete factories. Since they are created once and only once per `DependencyContainer`, they have a `LifecycleType` of `singleton`.
+
+While this tends to be sufficient for services, more-granular DI, especially in the weeds of your application, will prefer short-lived dependencies. These are known as `transient` dependencies, which is configurable only upon dependency registration:
+
+```swift
+final class DefaultDependencyRegistry: DependencyRegistryType {
+
+  func registerDependencies() throws {
+    /// This factory will be called every time MyViewControllerDataStoreType is resolved
+    DependencyContainer.global.register(MyViewControllerDataStoreType.self, lifecycle: .transient) { _ in
+      MyViewControllerDataStore()
+    }
+    /// etc.
+  }
+```
+
+Dependency lifecycles are also configurable via command line. See [Command Line Injection](#command-line-injection) for documentation on the `lifecycle` parameter.
+
+### Container Scope
+
+Since Relay uses type-mapping for strongly-typed dependency resolution, your code might start to become a bit ugly once a concrete factory does not satisfy all callers. For these cases, we can instead use nested containers, keyed by a `DependencyContainerScope`.
+
+Generally, container scope becomes more useful as dependencies become more granular. For example, we might have a view controller whose presented data can consume a number of different services. These details can be handled by injecting multiple data sources for the view controller:
+
+```swift
+
+/// MyDependencyScopes.swift
+
+extension DependencyContainerScope {
+
+  static var useCase1 = DependencyContainerScope("useCase1")
+  static var useCase2 = DependencyContainerScope("useCase2")
+
+}
+
+/// MyScopedDependencyRegistry.swift
+
+MyScopedDependencyRegistry: DependencyRegistryType {
+
+  func registerDependencies() throws {
+    DependencyContainer.useCase1.register(MyViewControllerDataStoreType.self, lifecycle: .transient) { _ in
+      MyViewControllerFirstUseCaseDataStore()
+    }
+    DependencyContainer.useCase2.register(MyViewControllerDataStoreType.self, lifecycle: .transient) { _ in
+      MyViewControllerSecondUseCaseDataStore()
+    }
+    /// etc.
+  }
+
+}
+```
+
+When a scoped container fails to resolve a type, resolution falls back to the global container. Together, scoped and global containers form a dependency graph. To enforce simple dependency graphs, and for sensibility in Relay architecture, dependency scope only extends one layer beneath the global container. For detailed information, see [Relay Architecture](./docs/architecture.md).
+
+Dependency scope is also configurable via command line. See [Command Line Injection](#command-line-injection) for documentation on the `scope` parameter.
+
+## Credits
+
+[![mindbody-logo](./docs/images/MindbodyLogo.png)](https://mindbodyonline.com/careers)
+
+Relay is owned by MINDBODY, Inc. and continuously maintained by our [contributors](https://github.com/mindbody/Relay/graphs/contributors).
