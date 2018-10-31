@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recipe View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RecipeViewController" customModule="RelayExampleIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcr-M4-YPm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86a-ka-iMF">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="628.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7A-JQ-A2A">
+                                        <rect key="frame" x="119.5" y="80" width="136" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAZ-vh-CE8">
+                                        <rect key="frame" x="20" y="126.5" width="101.5" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmx-p6-1aj">
+                                        <rect key="frame" x="20" y="387.5" width="107" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9D5-IM-jOp">
+                                        <rect key="frame" x="20" y="164.5" width="335" height="203"/>
+                                        <string key="text">Bacon ipsum dolor amet frankfurter chicken shankle, venison sausage turducken meatball tri-tip tongue cupim doner swine t-bone. Bacon beef rump shoulder. Burgdoggen chuck pork loin biltong meatloaf, swine picanha kielbasa. Buffalo andouille spare ribs cupim burgdoggen landjaeger. Leberkas pork chop pork buffalo. Kielbasa ham capicola chuck, fatback alcatra salami.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJU-ef-3Is">
+                                        <rect key="frame" x="20" y="425.5" width="335" height="183"/>
+                                        <string key="text">Ball tip meatloaf kevin landjaeger hamburger shankle fatback cupim frankfurter burgdoggen. Chicken shoulder shank pork belly tenderloin. Ham short ribs pig jerky pancetta alcatra turducken hamburger brisket jowl frankfurter shoulder pork loin. Doner strip steak venison t-bone hamburger pork belly filet mignon picanha, rump tri-tip burgdoggen tongue.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Lmx-p6-1aj" secondAttribute="trailing" constant="20" id="0gw-JW-977"/>
+                                    <constraint firstItem="vJU-ef-3Is" firstAttribute="leading" secondItem="Kcr-M4-YPm" secondAttribute="leading" constant="20" id="3q9-Dn-SNQ"/>
+                                    <constraint firstItem="p7A-JQ-A2A" firstAttribute="top" secondItem="Kcr-M4-YPm" secondAttribute="top" constant="80" id="4yD-dW-s0D"/>
+                                    <constraint firstItem="9D5-IM-jOp" firstAttribute="leading" secondItem="Kcr-M4-YPm" secondAttribute="leading" constant="20" id="7ac-jh-acD"/>
+                                    <constraint firstAttribute="trailing" secondItem="9D5-IM-jOp" secondAttribute="trailing" constant="20" id="AoE-ZY-gP3"/>
+                                    <constraint firstAttribute="trailing" secondItem="86a-ka-iMF" secondAttribute="trailing" id="BUt-LV-YFp"/>
+                                    <constraint firstAttribute="bottom" secondItem="vJU-ef-3Is" secondAttribute="bottom" constant="20" id="Bkr-IE-6Rq"/>
+                                    <constraint firstItem="oAZ-vh-CE8" firstAttribute="top" secondItem="p7A-JQ-A2A" secondAttribute="bottom" constant="20" id="C10-CN-c6g"/>
+                                    <constraint firstItem="oAZ-vh-CE8" firstAttribute="leading" secondItem="Kcr-M4-YPm" secondAttribute="leading" constant="20" id="F6B-od-JC1"/>
+                                    <constraint firstItem="Lmx-p6-1aj" firstAttribute="leading" secondItem="Kcr-M4-YPm" secondAttribute="leading" constant="20" id="RGr-gF-TQz"/>
+                                    <constraint firstItem="86a-ka-iMF" firstAttribute="leading" secondItem="Kcr-M4-YPm" secondAttribute="leading" id="UXK-Yu-6C8"/>
+                                    <constraint firstItem="p7A-JQ-A2A" firstAttribute="centerX" secondItem="Kcr-M4-YPm" secondAttribute="centerX" id="Zca-B3-wvL"/>
+                                    <constraint firstItem="86a-ka-iMF" firstAttribute="top" secondItem="Kcr-M4-YPm" secondAttribute="top" id="a3D-d2-yBA"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="p7A-JQ-A2A" secondAttribute="trailing" constant="20" id="ka2-0A-iqh"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oAZ-vh-CE8" secondAttribute="trailing" constant="20" id="oO4-rz-VgD"/>
+                                    <constraint firstAttribute="bottom" secondItem="86a-ka-iMF" secondAttribute="bottom" id="s8W-ll-eF7"/>
+                                    <constraint firstItem="p7A-JQ-A2A" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kcr-M4-YPm" secondAttribute="leading" constant="20" id="tHX-Rk-s8R"/>
+                                    <constraint firstItem="vJU-ef-3Is" firstAttribute="top" secondItem="Lmx-p6-1aj" secondAttribute="bottom" constant="16" id="vQn-zU-QrK"/>
+                                    <constraint firstItem="Lmx-p6-1aj" firstAttribute="top" secondItem="9D5-IM-jOp" secondAttribute="bottom" constant="20" id="vmt-4y-pXe"/>
+                                    <constraint firstAttribute="trailing" secondItem="vJU-ef-3Is" secondAttribute="trailing" constant="20" id="wku-Kz-m2r"/>
+                                    <constraint firstItem="9D5-IM-jOp" firstAttribute="top" secondItem="oAZ-vh-CE8" secondAttribute="bottom" constant="16" id="zIg-yl-CMr"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Kcr-M4-YPm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KKK-gq-uxA"/>
+                            <constraint firstItem="Kcr-M4-YPm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="U1T-fA-BBg"/>
+                            <constraint firstItem="86a-ka-iMF" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Zej-pt-QqB"/>
+                            <constraint firstItem="Kcr-M4-YPm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jJU-KT-O7j"/>
+                            <constraint firstItem="Kcr-M4-YPm" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vZS-0q-nhF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="ingredientsLabel" destination="9D5-IM-jOp" id="6H3-8X-M3j"/>
+                        <outlet property="instructionsLabel" destination="vJU-ef-3Is" id="50V-VN-MUh"/>
+                        <outlet property="recipeNameLabel" destination="p7A-JQ-A2A" id="24D-b9-yby"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
+        </scene>
+    </scenes>
+</document>
