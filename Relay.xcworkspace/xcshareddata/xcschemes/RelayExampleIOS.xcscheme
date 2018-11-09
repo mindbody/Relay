@@ -17,7 +17,7 @@
                BlueprintIdentifier = "1B66817F218A0CE500094BC4"
                BuildableName = "RelayExampleIOS.app"
                BlueprintName = "RelayExampleIOS"
-               ReferencedContainer = "container:RelayExampleIOS.xcodeproj">
+               ReferencedContainer = "container:RelayExampleIOS/RelayExampleIOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "1B668193218A0CE700094BC4"
                BuildableName = "RelayExampleIOSTests.xctest"
                BlueprintName = "RelayExampleIOSTests"
-               ReferencedContainer = "container:RelayExampleIOS.xcodeproj">
+               ReferencedContainer = "container:RelayExampleIOS/RelayExampleIOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "1B66819E218A0CE700094BC4"
                BuildableName = "RelayExampleIOSUITests.xctest"
                BlueprintName = "RelayExampleIOSUITests"
-               ReferencedContainer = "container:RelayExampleIOS.xcodeproj">
+               ReferencedContainer = "container:RelayExampleIOS/RelayExampleIOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "1B66817F218A0CE500094BC4"
             BuildableName = "RelayExampleIOS.app"
             BlueprintName = "RelayExampleIOS"
-            ReferencedContainer = "container:RelayExampleIOS.xcodeproj">
+            ReferencedContainer = "container:RelayExampleIOS/RelayExampleIOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "1B66817F218A0CE500094BC4"
             BuildableName = "RelayExampleIOS.app"
             BlueprintName = "RelayExampleIOS"
-            ReferencedContainer = "container:RelayExampleIOS.xcodeproj">
+            ReferencedContainer = "container:RelayExampleIOS/RelayExampleIOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "1B66817F218A0CE500094BC4"
             BuildableName = "RelayExampleIOS.app"
             BlueprintName = "RelayExampleIOS"
-            ReferencedContainer = "container:RelayExampleIOS.xcodeproj">
+            ReferencedContainer = "container:RelayExampleIOS/RelayExampleIOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

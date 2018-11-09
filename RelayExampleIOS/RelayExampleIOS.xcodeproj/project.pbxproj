@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B14821E218D124D0062AC4A /* RelayUITestFactoryIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B14821C218D12470062AC4A /* RelayUITestFactoryIndex.swift */; };
+		1B148222218D12C30062AC4A /* RelayUITestDependencyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B148221218D12C30062AC4A /* RelayUITestDependencyKeys.swift */; };
+		1B148223218D12C30062AC4A /* RelayUITestDependencyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B148221218D12C30062AC4A /* RelayUITestDependencyKeys.swift */; };
+		1B148224218D15F60062AC4A /* DependencyKeyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1FFE19218B847300A1A793 /* DependencyKeyExtensions.swift */; };
+		1B1FFE18218B844800A1A793 /* DefaultDependencyTypeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1FFE17218B844800A1A793 /* DefaultDependencyTypeIndex.swift */; };
+		1B1FFE1A218B847300A1A793 /* DependencyKeyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1FFE19218B847300A1A793 /* DependencyKeyExtensions.swift */; };
+		1B1FFE1C218B85A300A1A793 /* DefaultDependencyFactoryIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1FFE1B218B85A300A1A793 /* DefaultDependencyFactoryIndex.swift */; };
+		1B62F1552196345500FEE493 /* Relay.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BE98C2D21963428004F7728 /* Relay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1B668184218A0CE500094BC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B668183218A0CE500094BC4 /* AppDelegate.swift */; };
 		1B668186218A0CE500094BC4 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B668185218A0CE500094BC4 /* RecipeViewController.swift */; };
 		1B668189218A0CE500094BC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B668187218A0CE500094BC4 /* Main.storyboard */; };
@@ -24,6 +32,11 @@
 		1B6681C3218A117B00094BC4 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6681C2218A117B00094BC4 /* RecipeViewModel.swift */; };
 		1B6681C5218A185F00094BC4 /* RecipeDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6681C4218A185F00094BC4 /* RecipeDataStore.swift */; };
 		1B6681C7218A189F00094BC4 /* RecipeDataStoreStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6681C6218A189F00094BC4 /* RecipeDataStoreStub.swift */; };
+		1B6681CD218A1CF400094BC4 /* DefaultDependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6681CC218A1CF400094BC4 /* DefaultDependencyRegistry.swift */; };
+		1BE98C2621962E14004F7728 /* Relay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE98C2521962E14004F7728 /* Relay.framework */; };
+		1BE98C2C219633F6004F7728 /* Relay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE98C2B219633F6004F7728 /* Relay.framework */; };
+		1BE98C2E21963428004F7728 /* Relay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE98C2D21963428004F7728 /* Relay.framework */; };
+		1BE98C2F21963428004F7728 /* Relay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE98C2D21963428004F7728 /* Relay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +56,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1B62F1542196344E00FEE493 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1B62F1552196345500FEE493 /* Relay.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BE98C3021963428004F7728 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1BE98C2F21963428004F7728 /* Relay.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1B14821C218D12470062AC4A /* RelayUITestFactoryIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayUITestFactoryIndex.swift; sourceTree = "<group>"; };
+		1B14821F218D12770062AC4A /* Relay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Relay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B148221218D12C30062AC4A /* RelayUITestDependencyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayUITestDependencyKeys.swift; sourceTree = "<group>"; };
+		1B1FFE17218B844800A1A793 /* DefaultDependencyTypeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDependencyTypeIndex.swift; sourceTree = "<group>"; };
+		1B1FFE19218B847300A1A793 /* DependencyKeyExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyKeyExtensions.swift; sourceTree = "<group>"; };
+		1B1FFE1B218B85A300A1A793 /* DefaultDependencyFactoryIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDependencyFactoryIndex.swift; sourceTree = "<group>"; };
 		1B668180218A0CE500094BC4 /* RelayExampleIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RelayExampleIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B668183218A0CE500094BC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B668185218A0CE500094BC4 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +110,11 @@
 		1B6681C2218A117B00094BC4 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		1B6681C4218A185F00094BC4 /* RecipeDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDataStore.swift; sourceTree = "<group>"; };
 		1B6681C6218A189F00094BC4 /* RecipeDataStoreStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDataStoreStub.swift; sourceTree = "<group>"; };
+		1B6681C9218A1CD000094BC4 /* Relay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Relay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B6681CC218A1CF400094BC4 /* DefaultDependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDependencyRegistry.swift; sourceTree = "<group>"; };
+		1BE98C2521962E14004F7728 /* Relay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Relay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BE98C2B219633F6004F7728 /* Relay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Relay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BE98C2D21963428004F7728 /* Relay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Relay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BE98C2E21963428004F7728 /* Relay.framework in Frameworks */,
+				1BE98C2621962E14004F7728 /* Relay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,19 +138,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BE98C2C219633F6004F7728 /* Relay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B1FFE16218B843A00A1A793 /* Indicies */ = {
+			isa = PBXGroup;
+			children = (
+				1B1FFE1B218B85A300A1A793 /* DefaultDependencyFactoryIndex.swift */,
+				1B1FFE17218B844800A1A793 /* DefaultDependencyTypeIndex.swift */,
+			);
+			path = Indicies;
+			sourceTree = "<group>";
+		};
 		1B668177218A0CE400094BC4 = {
 			isa = PBXGroup;
 			children = (
+				1BE98C2D21963428004F7728 /* Relay.framework */,
 				1B668182218A0CE500094BC4 /* RelayExampleIOS */,
 				1B668197218A0CE700094BC4 /* RelayExampleIOSTests */,
 				1B6681A2218A0CE700094BC4 /* RelayExampleIOSUITests */,
 				1B668181218A0CE500094BC4 /* Products */,
+				1B6681C8218A1CD000094BC4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +179,7 @@
 		1B668182218A0CE500094BC4 /* RelayExampleIOS */ = {
 			isa = PBXGroup;
 			children = (
+				1B6681CB218A1CEB00094BC4 /* Dependencies */,
 				1B6681B2218A0D7000094BC4 /* Models */,
 				1B6681B1218A0D5300094BC4 /* Services */,
 				1B6681BF218A10BF00094BC4 /* ViewControllers */,
@@ -142,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				1B6681A3218A0CE700094BC4 /* RelayExampleIOSUITests.swift */,
+				1B14821C218D12470062AC4A /* RelayUITestFactoryIndex.swift */,
+				1B148221218D12C30062AC4A /* RelayUITestDependencyKeys.swift */,
 				1B6681A5218A0CE700094BC4 /* Info.plist */,
 			);
 			path = RelayExampleIOSUITests;
@@ -179,6 +244,27 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		1B6681C8218A1CD000094BC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BE98C2B219633F6004F7728 /* Relay.framework */,
+				1BE98C2521962E14004F7728 /* Relay.framework */,
+				1B14821F218D12770062AC4A /* Relay.framework */,
+				1B6681C9218A1CD000094BC4 /* Relay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B6681CB218A1CEB00094BC4 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				1B1FFE16218B843A00A1A793 /* Indicies */,
+				1B6681CC218A1CF400094BC4 /* DefaultDependencyRegistry.swift */,
+				1B1FFE19218B847300A1A793 /* DependencyKeyExtensions.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,6 +275,7 @@
 				1B66817C218A0CE500094BC4 /* Sources */,
 				1B66817D218A0CE500094BC4 /* Frameworks */,
 				1B66817E218A0CE500094BC4 /* Resources */,
+				1BE98C3021963428004F7728 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,6 +311,7 @@
 				1B66819B218A0CE700094BC4 /* Sources */,
 				1B66819C218A0CE700094BC4 /* Frameworks */,
 				1B66819D218A0CE700094BC4 /* Resources */,
+				1B62F1542196344E00FEE493 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -312,15 +400,21 @@
 			files = (
 				1B6681B6218A0D8E00094BC4 /* RecipeInstruction.swift in Sources */,
 				1B6681C7218A189F00094BC4 /* RecipeDataStoreStub.swift in Sources */,
+				1B1FFE1C218B85A300A1A793 /* DefaultDependencyFactoryIndex.swift in Sources */,
 				1B6681C5218A185F00094BC4 /* RecipeDataStore.swift in Sources */,
 				1B6681BE218A107B00094BC4 /* RecipeServiceStub.swift in Sources */,
 				1B6681B4218A0D8200094BC4 /* Recipe.swift in Sources */,
 				1B6681B8218A0DB500094BC4 /* RecipeIngredient.swift in Sources */,
+				1B6681CD218A1CF400094BC4 /* DefaultDependencyRegistry.swift in Sources */,
 				1B668186218A0CE500094BC4 /* RecipeViewController.swift in Sources */,
 				1B668184218A0CE500094BC4 /* AppDelegate.swift in Sources */,
 				1B6681C1218A110200094BC4 /* RecipeDataStoreType.swift in Sources */,
+				1B1FFE1A218B847300A1A793 /* DependencyKeyExtensions.swift in Sources */,
+				1B14821E218D124D0062AC4A /* RelayUITestFactoryIndex.swift in Sources */,
 				1B6681BA218A0E1400094BC4 /* RecipeServiceType.swift in Sources */,
+				1B148222218D12C30062AC4A /* RelayUITestDependencyKeys.swift in Sources */,
 				1B6681C3218A117B00094BC4 /* RecipeViewModel.swift in Sources */,
+				1B1FFE18218B844800A1A793 /* DefaultDependencyTypeIndex.swift in Sources */,
 				1B6681BC218A0E6700094BC4 /* PancakeRecipeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +431,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B148223218D12C30062AC4A /* RelayUITestDependencyKeys.swift in Sources */,
+				1B148224218D15F60062AC4A /* DependencyKeyExtensions.swift in Sources */,
 				1B6681A4218A0CE700094BC4 /* RelayExampleIOSUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

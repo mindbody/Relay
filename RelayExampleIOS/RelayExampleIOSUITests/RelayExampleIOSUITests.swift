@@ -7,28 +7,33 @@
 //
 
 import XCTest
+import Relay
 
-class RelayExampleIOSUITests: XCTestCase {
+final class RelayExampleIOSUITests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testDisplaysRecipe() {
+        let app = XCUIApplication()
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
+        let injectionLaunchArgument = DependencyInstructionLaunchArgument(type: .recipeService, factory: .testRecipeService)
+        let builder = LaunchArgumentBuilder(arguments: [injectionLaunchArgument])
+        app.launchArguments = builder.build()
 
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        app.launch()
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
+        let nameLabel = app.staticTexts["recipe-details.label.name"]
+        let ingredientsLabel = app.staticTexts["recipe-details.label.ingredients-list"]
+        let instructionsLabel = app.staticTexts["recipe-details.label.instructions-list"]
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        XCTAssertEqual(nameLabel.label, "Dynamic Dependency Injection")
+        XCTAssertEqual(ingredientsLabel.label, "- 2 injected dependencies\n")
+        XCTAssertEqual(instructionsLabel.label, """
+1. Index all dynamic dependencies at app launch.
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+2. Pass dependency injection instructions to command line. Serve hot.
+
+
+"""
+        )
     }
 
 }

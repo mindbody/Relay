@@ -26,6 +26,7 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7A-JQ-A2A">
                                         <rect key="frame" x="119.5" y="80" width="136" height="26.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="recipe-details.label.name"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -44,6 +45,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9D5-IM-jOp">
                                         <rect key="frame" x="20" y="164.5" width="335" height="203"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="recipe-details.label.ingredients-list"/>
                                         <string key="text">Bacon ipsum dolor amet frankfurter chicken shankle, venison sausage turducken meatball tri-tip tongue cupim doner swine t-bone. Bacon beef rump shoulder. Burgdoggen chuck pork loin biltong meatloaf, swine picanha kielbasa. Buffalo andouille spare ribs cupim burgdoggen landjaeger. Leberkas pork chop pork buffalo. Kielbasa ham capicola chuck, fatback alcatra salami.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -51,6 +53,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJU-ef-3Is">
                                         <rect key="frame" x="20" y="425.5" width="335" height="183"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="recipe-details.label.instructions-list"/>
                                         <string key="text">Ball tip meatloaf kevin landjaeger hamburger shankle fatback cupim frankfurter burgdoggen. Chicken shoulder shank pork belly tenderloin. Ham short ribs pig jerky pancetta alcatra turducken hamburger brisket jowl frankfurter shoulder pork loin. Doner strip steak venison t-bone hamburger pork belly filet mignon picanha, rump tri-tip burgdoggen tongue.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
