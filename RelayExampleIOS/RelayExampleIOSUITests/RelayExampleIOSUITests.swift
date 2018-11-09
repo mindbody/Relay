@@ -25,7 +25,7 @@ final class RelayExampleIOSUITests: XCTestCase {
         app.launchArguments = builder.build()
 
         /// GIVEN I launch the app
-        
+
         app.launch()
 
         /// WHEN the recipe screen displays

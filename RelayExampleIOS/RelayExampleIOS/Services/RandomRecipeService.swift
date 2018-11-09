@@ -16,8 +16,6 @@ final class RandomRecipeService: RecipeServiceType {
             return makePancakeRecipe()
         case 1:
             return makeIceRecipe()
-        case 2:
-            fallthrough
         default:
             return makeToastRecipe()
         }
@@ -36,8 +34,10 @@ final class RandomRecipeService: RecipeServiceType {
             RecipeIngredient(quantity: "1/2 cup", ingredient: "fresh or frozen blueberries, thawed")
         ]
 
+        // swiftlint:disable line_length
         let firstInstruction = RecipeInstruction(instruction: "In a large bowl, sift together flour, salt, baking powder and sugar. In a small bowl, beat together egg and milk. Stir milk and egg into flour mixture. Mix in the butter and fold in the blueberries. Set aside for 1 hour.")
         let secondInstruction = RecipeInstruction(instruction: "Heat a lightly oiled griddle or frying pan over medium high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.")
+        // swiftlint:enable line_length
 
         return Recipe(name: "Blueberry Pancakes", ingredients: ingredients, instructions: [firstInstruction, secondInstruction])
     }

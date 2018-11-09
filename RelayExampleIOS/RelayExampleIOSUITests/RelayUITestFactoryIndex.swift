@@ -11,9 +11,9 @@ import Relay
 
 final class RelayUITestFactoryIndex: DependencyFactoryIndexable {
 
-    let index: [DependencyFactoryKey : (DependencyContainer) -> Any] = RelayUITestFactoryIndex.makeIndex()
+    let index: [DependencyFactoryKey: (DependencyContainer) -> Any] = RelayUITestFactoryIndex.makeIndex()
 
-    private static func makeIndex() -> [DependencyFactoryKey : (DependencyContainer) -> Any] {
+    private static func makeIndex() -> [DependencyFactoryKey: (DependencyContainer) -> Any] {
         let mockIngredient = RecipeIngredient(quantity: "2", ingredient: "injected dependencies")
         let mockInstructions = [
             RecipeInstruction(instruction: "Index all dynamic dependencies at app launch."),

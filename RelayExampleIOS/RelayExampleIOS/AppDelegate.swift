@@ -14,11 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         /// Dependency registration should be done immediately on application launch
         registerDependencies()
-        
+
         let mainStoryboard = UIStoryboard(name: "Main", bundle: .main)
         guard let controller = mainStoryboard.instantiateInitialViewController() as? RecipeViewController else {
             fatalError("Cannot find initial view controller")
@@ -47,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             /// (Optional) Removing dynamic injection code from release builds reduces binary size and eliminates potentials
             /// for unwanted debug code being released to the public.
-            
+
             #if DEBUG
 
             /// A DynamicDependencyIndex is responsible for staging dependencies to be accessed by a DynamicDependencyRegistry;
@@ -74,4 +73,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

@@ -32,6 +32,4 @@ final class RecipeViewController: UIViewController {
         instructionsLabel.text = viewModel.formattedInstructions
     }
 
-
 }
-

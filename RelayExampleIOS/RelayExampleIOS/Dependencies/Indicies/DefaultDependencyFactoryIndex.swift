@@ -11,7 +11,7 @@ import Relay
 
 final class DefaultDependencyFactoryIndex: DependencyFactoryIndexable {
 
-    let index: [DependencyFactoryKey : (DependencyContainer) -> Any] = DefaultDependencyFactoryIndex.makeDefaultFactories()
+    let index: [DependencyFactoryKey: (DependencyContainer) -> Any] = DefaultDependencyFactoryIndex.makeDefaultFactories()
 
     private static func makeDefaultFactories() -> [DependencyFactoryKey: (DependencyContainer) -> Any] {
         let recipeServiceFactory: (DependencyContainer) -> Any = { _ in
