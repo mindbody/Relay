@@ -26,7 +26,7 @@
 		1B6681B6218A0D8E00094BC4 /* RecipeInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6681B5218A0D8E00094BC4 /* RecipeInstruction.swift */; };
 		1B6681B8218A0DB500094BC4 /* RecipeIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6681B7218A0DB500094BC4 /* RecipeIngredient.swift */; };
 		1B6681BA218A0E1400094BC4 /* RecipeServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6681B9218A0E1400094BC4 /* RecipeServiceType.swift */; };
-		1B6681BC218A0E6700094BC4 /* PancakeRecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6681BB218A0E6700094BC4 /* PancakeRecipeService.swift */; };
+		1B6681BC218A0E6700094BC4 /* RandomRecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6681BB218A0E6700094BC4 /* RandomRecipeService.swift */; };
 		1B6681BE218A107B00094BC4 /* RecipeServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6681BD218A107B00094BC4 /* RecipeServiceStub.swift */; };
 		1B6681C1218A110200094BC4 /* RecipeDataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6681C0218A110200094BC4 /* RecipeDataStoreType.swift */; };
 		1B6681C3218A117B00094BC4 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6681C2218A117B00094BC4 /* RecipeViewModel.swift */; };
@@ -104,7 +104,7 @@
 		1B6681B5218A0D8E00094BC4 /* RecipeInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInstruction.swift; sourceTree = "<group>"; };
 		1B6681B7218A0DB500094BC4 /* RecipeIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredient.swift; sourceTree = "<group>"; };
 		1B6681B9218A0E1400094BC4 /* RecipeServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeServiceType.swift; sourceTree = "<group>"; };
-		1B6681BB218A0E6700094BC4 /* PancakeRecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeRecipeService.swift; sourceTree = "<group>"; };
+		1B6681BB218A0E6700094BC4 /* RandomRecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRecipeService.swift; sourceTree = "<group>"; };
 		1B6681BD218A107B00094BC4 /* RecipeServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeServiceStub.swift; sourceTree = "<group>"; };
 		1B6681C0218A110200094BC4 /* RecipeDataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDataStoreType.swift; sourceTree = "<group>"; };
 		1B6681C2218A117B00094BC4 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
@@ -215,9 +215,9 @@
 		1B6681B1218A0D5300094BC4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1B6681BB218A0E6700094BC4 /* RandomRecipeService.swift */,
 				1B6681BD218A107B00094BC4 /* RecipeServiceStub.swift */,
 				1B6681B9218A0E1400094BC4 /* RecipeServiceType.swift */,
-				1B6681BB218A0E6700094BC4 /* PancakeRecipeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -415,7 +415,7 @@
 				1B148222218D12C30062AC4A /* RelayUITestDependencyKeys.swift in Sources */,
 				1B6681C3218A117B00094BC4 /* RecipeViewModel.swift in Sources */,
 				1B1FFE18218B844800A1A793 /* DefaultDependencyTypeIndex.swift in Sources */,
-				1B6681BC218A0E6700094BC4 /* PancakeRecipeService.swift in Sources */,
+				1B6681BC218A0E6700094BC4 /* RandomRecipeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

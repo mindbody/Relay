@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class PancakeRecipeService: RecipeServiceType {
+final class RandomRecipeService: RecipeServiceType {
 
     func fetchRecipe() -> Recipe {
         switch Int.random(in: 0..<3) {

@@ -15,7 +15,7 @@ final class DefaultDependencyFactoryIndex: DependencyFactoryIndexable {
 
     private static func makeDefaultFactories() -> [DependencyFactoryKey: (DependencyContainer) -> Any] {
         let recipeServiceFactory: (DependencyContainer) -> Any = { _ in
-            PancakeRecipeService()
+            RandomRecipeService()
         }
         let recipeDataStoreFactory: (DependencyContainer) -> Any = { container in
             RecipeDataStore(service: container.resolve(RecipeServiceType.self))

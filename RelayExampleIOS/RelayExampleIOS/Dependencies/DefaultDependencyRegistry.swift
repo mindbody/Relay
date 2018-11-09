@@ -13,7 +13,7 @@ final class DefaultDependencyRegistry: DependencyRegistryType {
 
     func registerDependencies() throws {
         DependencyContainer.global.register(RecipeServiceType.self) { _ in
-            PancakeRecipeService()
+            RandomRecipeService()
         }
         DependencyContainer.global.register(RecipeDataStoreType.self, lifecycle: .transient) { container in
             RecipeDataStore(service: container.resolve())
