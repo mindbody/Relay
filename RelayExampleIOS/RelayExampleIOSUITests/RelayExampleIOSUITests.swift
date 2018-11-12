@@ -35,15 +35,17 @@ final class RelayExampleIOSUITests: XCTestCase {
         let ingredientsLabel = app.staticTexts["recipe-details.label.ingredients-list"]
         let instructionsLabel = app.staticTexts["recipe-details.label.instructions-list"]
 
+        let expectedInstructions = """
+                                   1. Index all dynamic dependencies at app launch.
+
+                                   2. Pass dependency injection instructions to command line. Serve hot.
+
+
+                                   """
+
         XCTAssertEqual(nameLabel.label, "Dynamic Dependency Injection")
         XCTAssertEqual(ingredientsLabel.label, "- 2 injected dependencies\n")
-        XCTAssertEqual(instructionsLabel.label, """
-1. Index all dynamic dependencies at app launch.
-
-2. Pass dependency injection instructions to command line. Serve hot.
-
-
-"""
+        XCTAssertEqual(instructionsLabel.label, expectedInstructions
         )
     }
 

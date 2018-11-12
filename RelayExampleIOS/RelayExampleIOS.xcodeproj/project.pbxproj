@@ -145,13 +145,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B1FFE16218B843A00A1A793 /* Indicies */ = {
+		1B1FFE16218B843A00A1A793 /* Indices */ = {
 			isa = PBXGroup;
 			children = (
 				1B1FFE1B218B85A300A1A793 /* DefaultDependencyFactoryIndex.swift */,
 				1B1FFE17218B844800A1A793 /* DefaultDependencyTypeIndex.swift */,
 			);
-			path = Indicies;
+			path = Indices;
 			sourceTree = "<group>";
 		};
 		1B668177218A0CE400094BC4 = {
@@ -258,7 +258,7 @@
 		1B6681CB218A1CEB00094BC4 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				1B1FFE16218B843A00A1A793 /* Indicies */,
+				1B1FFE16218B843A00A1A793 /* Indices */,
 				1B6681CC218A1CF400094BC4 /* DefaultDependencyRegistry.swift */,
 				1B1FFE19218B847300A1A793 /* DependencyKeyExtensions.swift */,
 			);
