@@ -43,7 +43,8 @@ public final class DependencyContainer {
     }
 
     private func keyFor<T>(_ type: T.Type = T.self) -> DependencyKey {
-        return DependencyKey(type)
+        let baseType = T?.underlyingType
+        return DependencyKey(baseType)
     }
 
     /// Registers a concrete type for an abstract dependency
@@ -79,7 +80,7 @@ public final class DependencyContainer {
         let key = keyFor(dependencyType)
         let lifecycle = lifecycles[key] ?? .singleton
 
-        if lifecycle == .singleton, let resolved = singletonDependencies[key] as? T {
+        if lifecycle == .singleton, singletonDependencies[key] != nil, let resolved = singletonDependencies[key] as? T {
             return resolved
         }
         guard let found = factories[keyFor(dependencyType)]?(self) else {

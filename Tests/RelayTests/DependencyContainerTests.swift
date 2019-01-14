@@ -16,6 +16,7 @@ private protocol TypeD: class { }
 private protocol TypeE: class { }
 private protocol TypeF: class { }
 private protocol TypeG: class { }
+private protocol TypeH: class { }
 
 // swiftlint:disable nesting
 final class DependencyContainerTests: XCTestCase {
@@ -101,6 +102,27 @@ final class DependencyContainerTests: XCTestCase {
         }
 
         XCTAssert(implementsF.nested === sut.resolve(TypeE.self))
+    }
+
+    func testFlattensOptionalTypeMapping() throws {
+        class ImplementsH: TypeH { }
+        class AlsoImplementsH: TypeH { }
+
+        let scope = DependencyContainerScope(#function)
+        let sut = DependencyContainer.container(for: scope)
+
+        sut.register(TypeH.self) { _ in ImplementsH() }
+
+        guard let resolvedOptional = sut.resolve(TypeH??.self),
+            let resolved = resolvedOptional else {
+            XCTFail("Failed to register optional")
+            return
+        }
+        XCTAssert(resolved is ImplementsH)
+
+        sut.register(TypeH??.self) { _ in AlsoImplementsH() }
+
+        XCTAssert(sut.resolve(TypeH.self) is AlsoImplementsH)
     }
 
 }
