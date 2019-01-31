@@ -3,7 +3,7 @@ $version = '0.2.1'
 Pod::Spec.new do |spec|
 	spec.name = 'Relay'
 	spec.version = $version
-	# spec.license = 'MIT'
+	spec.license = { :type => 'MIT', :file => 'LICENSE' }
 	spec.homepage = 'https://github.com/mindbody/Relay'
 	spec.author = 'Relay Contributors'
 	spec.summary = 'Swift Dynamic Dependency Injection for modern testing'
