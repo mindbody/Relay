@@ -35,6 +35,13 @@ Add `Relay` to your `Cartfile`:
 github 'mindbody/Relay'
 ```
 
+### CocoaPods
+
+Add `Relay` to your `Podfile`:
+```
+pod 'Relay'
+```
+
 ### Swift Package Manager
 
 Add `Relay` to your `Package.swift`

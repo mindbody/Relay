@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         /// Dependency registration and resolution is done via type-mapping. If a registry has not yet mapped a specified type,
         /// then the application will crash.
-        controller.dataStore = DependencyContainer.global.resolve(RecipeDataStoreType.self)
+        controller.dataStore = DependencyContainer.global.resolve()
 
         let mainWindow = UIWindow(frame: UIScreen.main.bounds)
         mainWindow.rootViewController = controller
