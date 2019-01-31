@@ -1,4 +1,9 @@
 # Relay
+[![Release](https://img.shields.io/github/release/mindbody/relay.svg)](https://github.com/mindbody/Relay/releases)
+[![Build Status](https://travis-ci.org/mindbody/Relay.svg?branch=master)](https://travis-ci.com/mindbody/Relay)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Relay.svg)](https://cocoapods.org/pods/Relay)
+[![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux-lightgrey.svg)](http://cocoapods.org/pods/Relay)
 
 Relay is a dynamic dependency injection framework that uses IoC (Inversion of Control) Containers and builds upon them to make integration testing dependable, focused, and efficient.
 
