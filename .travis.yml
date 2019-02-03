@@ -45,3 +45,5 @@ jobs:
     os: osx
     script:
       - rake test_watchos
+after_success:
+- bash <(curl -s https://codecov.io/bash) -J 'Relay' -F main
