@@ -28,6 +28,9 @@ jobs:
   - stage: Test
     name: "iOS"
     os: osx
+    sudo: required
+    install:
+      - eval "$(sudo mkdir /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 9.3.simruntime/Contents/Resources/RuntimeRoot/usr/lib)"
     script:
       - rake test_ios
   - stage: Test
@@ -38,6 +41,9 @@ jobs:
   - stage: Test
     name: "tvOS"
     os: osx
+    sudo: required
+    install:
+      - eval "$(sudo mkdir /Library/Developer/CoreSimulator/Profiles/Runtimes/tvOS 9.2.simruntime/Contents/Resources/RuntimeRoot/usr/lib)"
     script:
       - rake test_tvos
   - stage: Test
