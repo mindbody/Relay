@@ -29,9 +29,8 @@ jobs:
     name: "iOS"
     os: osx
     sudo: required
-    install:
-      - eval "$(sudo mkdir /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\\ 9.3.simruntime/Contents/Resources/RuntimeRoot/usr/lib)"
     script:
+      - sudo mkdir /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\\ 9.3.simruntime/Contents/Resources/RuntimeRoot/usr/lib
       - rake test_ios
   - stage: Test
     name: "macOS"
@@ -42,9 +41,8 @@ jobs:
     name: "tvOS"
     os: osx
     sudo: required
-    install:
-      - eval "$(sudo mkdir /Library/Developer/CoreSimulator/Profiles/Runtimes/tvOS\\ 9.2.simruntime/Contents/Resources/RuntimeRoot/usr/lib)"
     script:
+      - sudo mkdir /Library/Developer/CoreSimulator/Profiles/Runtimes/tvOS\\ 9.2.simruntime/Contents/Resources/RuntimeRoot/usr/lib
       - rake test_tvos
   - stage: Test
     name: "watchOS"
