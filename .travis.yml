@@ -1,4 +1,4 @@
-osx_image: xcode10.1
+osx_image: xcode10.2
 cache:
   - bundler: true
 install:
@@ -14,7 +14,7 @@ jobs:
     sudo: required
     dist: trusty
     env:
-      - SWIFT_VERSION=4.2
+      - SWIFT_VERSION=5.0
       - SWIFTENV_INSTALL="https://gist.githubusercontent.com/johnhammerlund/b4c3686e4270d463ef955c5a77f0b814/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh"
     install:
       - eval "$(curl -sL $SWIFTENV_INSTALL)"
@@ -28,6 +28,7 @@ jobs:
   - stage: Test
     name: "iOS"
     os: osx
+    sudo: required
     script:
       - rake test_ios
   - stage: Test
@@ -38,6 +39,7 @@ jobs:
   - stage: Test
     name: "tvOS"
     os: osx
+    sudo: required
     script:
       - rake test_tvos
   - stage: Test
