@@ -30,7 +30,6 @@ jobs:
     os: osx
     sudo: required
     script:
-      - sudo mkdir /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\\ 9.3.simruntime/Contents/Resources/RuntimeRoot/usr/lib/swift
       - rake test_ios
   - stage: Test
     name: "macOS"
@@ -42,7 +41,6 @@ jobs:
     os: osx
     sudo: required
     script:
-      - sudo mkdir /Library/Developer/CoreSimulator/Profiles/Runtimes/tvOS\\ 9.2.simruntime/Contents/Resources/RuntimeRoot/usr/lib/swift
       - rake test_tvos
   - stage: Test
     name: "watchOS"
