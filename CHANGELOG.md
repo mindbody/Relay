@@ -10,6 +10,30 @@
 - None
 
 
+## 0.3.1
+
+#### Enhancements
+- None
+
+#### Bug Fixes
+- Add thread-safety to `DependencyContainer.resolve<T>(_:)`
+
+#### Other
+- None
+
+
+## 0.3.0
+
+#### Enhancements
+- Update to Swift 5
+
+#### Bug Fixes
+- None
+
+#### Other
+- None
+
+
 ## 0.2.1
 
 #### Enhancements

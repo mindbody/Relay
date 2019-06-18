@@ -51,12 +51,12 @@ pod 'Relay'
 
 Add `Relay` to your `Package.swift`
 ```swift
-// swift-tools-version:4.2
+// swift-tools-version:5.0
 import PackageDescription
 
 let package = Package(
     dependencies: [
-        .package(url: "https://github.com/mindbody/Relay.git", from: "0.2.1")
+        .package(url: "https://github.com/mindbody/Relay.git", from: "0.3.1")
     ]
 )
 ```
