@@ -17,6 +17,7 @@ private protocol TypeE: class { }
 private protocol TypeF: class { }
 private protocol TypeG: class { }
 private protocol TypeH: class { }
+private protocol TypeI: class { }
 
 // swiftlint:disable nesting
 final class DependencyContainerTests: XCTestCase {
@@ -123,6 +124,54 @@ final class DependencyContainerTests: XCTestCase {
         sut.register(TypeH??.self) { _ in AlsoImplementsH() }
 
         XCTAssert(sut.resolve(TypeH.self) is AlsoImplementsH)
+    }
+
+    func testRegistrationIsThreadSafe() throws {
+        let scope = DependencyContainerScope(#function)
+        let sut = DependencyContainer.container(for: scope)
+
+        let group = DispatchGroup()
+        let types = DynamicTypes.allTypes
+
+        for type in types {
+            group.enter()
+
+            DispatchQueue.global().async {
+                let key = DependencyKey(type)
+                sut.register(key: key) { _ in
+                    type.init()
+                }
+                group.leave()
+            }
+        }
+        XCTAssertEqual(group.wait(timeout: .now() + 0.3), .success)
+    }
+
+    func testResolutionIsThreadSafe() throws {
+        class ImplementsI: TypeI { }
+        class AlsoImplementsI: TypeI { }
+
+        let scope = DependencyContainerScope(#function)
+        let sut = DependencyContainer.container(for: scope)
+        var numTimesFactoryExecuted = 0
+        sut.register(TypeI.self) { _ in
+            numTimesFactoryExecuted += 1
+            return ImplementsI()
+        }
+
+        let group = DispatchGroup()
+
+        for _ in 0..<1_000 {
+            group.enter()
+
+            DispatchQueue.global().async {
+                _ = sut.resolve(TypeI.self)
+                group.leave()
+                print("called")
+            }
+        }
+        XCTAssertEqual(group.wait(timeout: .now() + 1), .success)
+        XCTAssertEqual(numTimesFactoryExecuted, 1)
     }
 
 }

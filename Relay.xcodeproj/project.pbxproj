@@ -141,6 +141,9 @@
 		1B6B13DF217A8BD6004C1E76 /* LifecycleTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B13DC217A8BD6004C1E76 /* LifecycleTypeExtensions.swift */; };
 		1B6B13E0217A8BD6004C1E76 /* LifecycleTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B13DC217A8BD6004C1E76 /* LifecycleTypeExtensions.swift */; };
 		1B7798102171480D00DE8477 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B77980D2171480D00DE8477 /* XCTestManifests.swift */; };
+		1B80388D22B981EA00A48C56 /* DynamicTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80388C22B981EA00A48C56 /* DynamicTypes.swift */; };
+		1B80388E22B981EA00A48C56 /* DynamicTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80388C22B981EA00A48C56 /* DynamicTypes.swift */; };
+		1B80388F22B981EA00A48C56 /* DynamicTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80388C22B981EA00A48C56 /* DynamicTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,6 +223,7 @@
 		1B6B13DC217A8BD6004C1E76 /* LifecycleTypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleTypeExtensions.swift; sourceTree = "<group>"; };
 		1B779805217147D900DE8477 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 		1B77980D2171480D00DE8477 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		1B80388C22B981EA00A48C56 /* DynamicTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				1B47E44D216FE49A00940349 /* DynamicDependencyTestUtilities.swift */,
+				1B80388C22B981EA00A48C56 /* DynamicTypes.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -930,6 +935,7 @@
 				1B47E471216FE49B00940349 /* DynamicDependencyRegistryTests.swift in Sources */,
 				1B47E46E216FE49B00940349 /* DynamicDependencyTestUtilities.swift in Sources */,
 				1B2D6B9C2171011800CCB604 /* DependencyInstructionLaunchArgumentTests.swift in Sources */,
+				1B80388D22B981EA00A48C56 /* DynamicTypes.swift in Sources */,
 				1B47E468216FE49B00940349 /* DependencyContainerTests.swift in Sources */,
 				1B170ED021ED047000564994 /* OptionalExtensionTests.swift in Sources */,
 				1B47E456216FE49A00940349 /* DynamicDependencyIndexTests.swift in Sources */,
@@ -947,6 +953,7 @@
 				1B47E472216FE49B00940349 /* DynamicDependencyRegistryTests.swift in Sources */,
 				1B47E46F216FE49B00940349 /* DynamicDependencyTestUtilities.swift in Sources */,
 				1B2D6B9D2171011800CCB604 /* DependencyInstructionLaunchArgumentTests.swift in Sources */,
+				1B80388E22B981EA00A48C56 /* DynamicTypes.swift in Sources */,
 				1B47E469216FE49B00940349 /* DependencyContainerTests.swift in Sources */,
 				1B170ED121ED047000564994 /* OptionalExtensionTests.swift in Sources */,
 				1B47E457216FE49A00940349 /* DynamicDependencyIndexTests.swift in Sources */,
@@ -967,6 +974,7 @@
 				1B2D6B9E2171011800CCB604 /* DependencyInstructionLaunchArgumentTests.swift in Sources */,
 				1B47E46A216FE49B00940349 /* DependencyContainerTests.swift in Sources */,
 				1B7798102171480D00DE8477 /* XCTestManifests.swift in Sources */,
+				1B80388F22B981EA00A48C56 /* DynamicTypes.swift in Sources */,
 				1B47E458216FE49A00940349 /* DynamicDependencyIndexTests.swift in Sources */,
 				1B2D6B9A2170FBB900CCB604 /* CommandLineExtensionTests.swift in Sources */,
 				1B2D6BA2217102B600CCB604 /* LaunchArgumentBuilderTests.swift in Sources */,

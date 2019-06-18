@@ -23,6 +23,7 @@ public final class DependencyContainer {
     private var singletonDependencies: [DependencyKey: Any] = [:]
     private var lifecycles: [DependencyKey: LifecycleType] = [:]
     private var instanceQueue = DispatchQueue(label: "com.mindbodyonline.Relay.DependencyContainer.static")
+    private var resolutionDispatchGroups: [DependencyKey: DispatchGroup] = [:]
 
     /// Returns a DependencyContainer with given scope. If unavailable, then a new one is created.
     ///
@@ -58,7 +59,7 @@ public final class DependencyContainer {
         register(key: key, lifecycle: lifecycle, with: factory)
     }
 
-    /// Registers a dynamic factory for an abstract dependency
+    /// Registers a dynamic factory for an abstract dependency. Can be safely called from multiple threads.
     ///
     /// - Parameters:
     ///   - key: A key used to uniquely identify an injected dependency
@@ -72,17 +73,58 @@ public final class DependencyContainer {
         }
     }
 
-    /// Resolves a concrete type from an abstract dependency
+    /// Resolves a concrete type from an abstract dependency. Can be safely called from multiple threads.
     ///
     /// - Parameter dependencyType: The abstract dependency
     /// - Returns: A concrete implementor
     public func resolve<T>(_ dependencyType: T.Type = T.self) -> T {
-        let key = keyFor(dependencyType)
-        let lifecycle = lifecycles[key] ?? .singleton
+        /// This function must be thread-safe to avoid re-executing any factory for a given dependency.
+        /// Since factories could involve recursive resolution, we must manage the various running operations ourselves.
+        ///
+        /// We do this by registering a DispatchGroup when we know that the factory will have to be used for a given type.
+        /// These groups are serially type-mapped. If a group already exists, then we wait for it to complete before recursing;
+        /// otherwise, we continue to executing the mapped factory.
+        ///
+        /// For transient dependencies, this means that the threads will execute the factory in FIFO order.
 
-        if lifecycle == .singleton, singletonDependencies[key] != nil, let resolved = singletonDependencies[key] as? T {
-            return resolved
+        let key = keyFor(dependencyType)
+        let lifecycle = instanceQueue.sync { lifecycles[key] ?? .singleton }
+
+        let existingDependency = instanceQueue.sync { () -> T? in
+            if lifecycle == .singleton, singletonDependencies[key] != nil, let resolved = singletonDependencies[key] as? T {
+                return resolved
+            }
+            return nil
         }
+        if let existingDependency = existingDependency {
+            return existingDependency
+        }
+
+        /// If a group already exists, then we'll wait for it to complete on the separate thread
+        var isResolutionActive: Bool = false
+        let dispatchGroup = instanceQueue.sync { () -> DispatchGroup in
+            if let group = resolutionDispatchGroups[key] {
+                isResolutionActive = true
+                return group
+            }
+            let group = DispatchGroup()
+            resolutionDispatchGroups[key] = group
+            return group
+        }
+        if isResolutionActive {
+            dispatchGroup.wait()
+            return resolve(dependencyType)
+        }
+
+        /// We're the first one in & must notify the group once we've executed the factory
+        dispatchGroup.enter()
+        defer {
+            instanceQueue.sync {
+                resolutionDispatchGroups[key] = nil
+            }
+            dispatchGroup.leave()
+        }
+
         guard let found = factories[keyFor(dependencyType)]?(self) else {
             if lifecycle == .transient || self === DependencyContainer.global {
                 fatalError("Failed to resolve dependency for '\(dependencyType)'")
@@ -92,7 +134,9 @@ public final class DependencyContainer {
         guard let resolved = found as? T else {
             fatalError("Dependency mismatch; expected type \"\(T.self)\", got \"\(type(of: found))\"")
         }
-        singletonDependencies[key] = resolved
+        instanceQueue.sync {
+            singletonDependencies[key] = resolved
+        }
         return resolved
     }
 
