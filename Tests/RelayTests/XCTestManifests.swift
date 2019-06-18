@@ -18,7 +18,6 @@ extension DependencyContainerTests {
     // to regenerate.
     static let __allTests__DependencyContainerTests = [
         ("testComponentContainersFallBackToGlobalScope", testComponentContainersFallBackToGlobalScope),
-        ("testFlattensOptionalTypeMapping", testFlattensOptionalTypeMapping),
         ("testLazyLoadsSingletonDependencies", testLazyLoadsSingletonDependencies),
         ("testRegistersTypes", testRegistersTypes),
         ("testRegistersTypesAtComponentScope", testRegistersTypesAtComponentScope),
