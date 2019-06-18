@@ -5,7 +5,7 @@
 //  Created by John Hammerlund on 6/18/19.
 //
 
-import UIKit
+import Foundation
 
 protocol ConstructableDynamicType: class {
     init()
