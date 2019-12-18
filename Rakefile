@@ -7,7 +7,7 @@ def build_matrix
       :scheme => "#{$framework}-iOS",
       :run_tests => true,
       :destinations => [
-        "OS=latest,name=iPad Air 2"
+        "OS=latest,name=iPhone 11 Pro Max"
       ]
     },
     {
