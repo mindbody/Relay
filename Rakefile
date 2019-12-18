@@ -7,7 +7,6 @@ def build_matrix
       :scheme => "#{$framework}-iOS",
       :run_tests => true,
       :destinations => [
-        "OS=10.3.1,name=iPhone 5s",
         "OS=latest,name=iPad Air 2"
       ]
     },
@@ -22,7 +21,6 @@ def build_matrix
       :scheme => "#{$framework}-tvOS",
       :run_tests => true,
       :destinations => [
-        "OS=10.2,name=Apple TV 1080p",
         "OS=latest,name=Apple TV 4K"
       ]
     },
@@ -30,7 +28,7 @@ def build_matrix
       :scheme => "#{$framework}-watchOS",
       :run_tests => false,
       :destinations => [
-        "OS=latest,name=Apple Watch Series 2 - 38mm"
+        "OS=latest,name=Apple Watch Series 5 - 40mm"
       ]
     }
   ]
