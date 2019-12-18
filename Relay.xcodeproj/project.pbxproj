@@ -132,6 +132,9 @@
 		1B47E48E21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */; };
 		1B47E48F21700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */; };
 		1B47E49021700A2B00940349 /* LaunchArgumentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */; };
+		1B5F7A8D23A9DD1B00E1E98B /* InjectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5F7A8C23A9DD1B00E1E98B /* InjectedTests.swift */; };
+		1B5F7A8E23A9DD1B00E1E98B /* InjectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5F7A8C23A9DD1B00E1E98B /* InjectedTests.swift */; };
+		1B5F7A8F23A9DD1B00E1E98B /* InjectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5F7A8C23A9DD1B00E1E98B /* InjectedTests.swift */; };
 		1B6B13D3217A7A9F004C1E76 /* LifecycleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B13D2217A7A9F004C1E76 /* LifecycleType.swift */; };
 		1B6B13D4217A7A9F004C1E76 /* LifecycleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B13D2217A7A9F004C1E76 /* LifecycleType.swift */; };
 		1B6B13D5217A7A9F004C1E76 /* LifecycleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B13D2217A7A9F004C1E76 /* LifecycleType.swift */; };
@@ -144,6 +147,10 @@
 		1B80388D22B981EA00A48C56 /* DynamicTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80388C22B981EA00A48C56 /* DynamicTypes.swift */; };
 		1B80388E22B981EA00A48C56 /* DynamicTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80388C22B981EA00A48C56 /* DynamicTypes.swift */; };
 		1B80388F22B981EA00A48C56 /* DynamicTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80388C22B981EA00A48C56 /* DynamicTypes.swift */; };
+		1BBFD51523A9A11700A7C3ED /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFD51423A9A11700A7C3ED /* Injected.swift */; };
+		1BBFD51623A9A11700A7C3ED /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFD51423A9A11700A7C3ED /* Injected.swift */; };
+		1BBFD51723A9A11700A7C3ED /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFD51423A9A11700A7C3ED /* Injected.swift */; };
+		1BBFD51823A9A11700A7C3ED /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFD51423A9A11700A7C3ED /* Injected.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,11 +226,13 @@
 		1B47E48221700A2B00940349 /* LaunchArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArgument.swift; sourceTree = "<group>"; };
 		1B47E48321700A2B00940349 /* DependencyInstructionLaunchArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyInstructionLaunchArgument.swift; sourceTree = "<group>"; };
 		1B47E48421700A2B00940349 /* LaunchArgumentBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchArgumentBuilder.swift; sourceTree = "<group>"; };
+		1B5F7A8C23A9DD1B00E1E98B /* InjectedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectedTests.swift; sourceTree = "<group>"; };
 		1B6B13D2217A7A9F004C1E76 /* LifecycleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleType.swift; sourceTree = "<group>"; };
 		1B6B13DC217A8BD6004C1E76 /* LifecycleTypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleTypeExtensions.swift; sourceTree = "<group>"; };
 		1B779805217147D900DE8477 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 		1B77980D2171480D00DE8477 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		1B80388C22B981EA00A48C56 /* DynamicTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTypes.swift; sourceTree = "<group>"; };
+		1BBFD51423A9A11700A7C3ED /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +359,7 @@
 				1B47E443216FE49A00940349 /* DynamicDependencyIndexTests.swift */,
 				1B47E44E216FE49A00940349 /* DynamicDependencyRegistryTests.swift */,
 				1B47E44F216FE49A00940349 /* InjectDependenciesArgumentParserTests.swift */,
+				1B5F7A8C23A9DD1B00E1E98B /* InjectedTests.swift */,
 				1B170ECF21ED047000564994 /* OptionalExtensionTests.swift */,
 				1B47E445216FE49A00940349 /* Resources */,
 				1B47E44C216FE49A00940349 /* Util */,
@@ -369,6 +379,7 @@
 				1B47E3BB216FE34500940349 /* DependencyContainerScope.swift */,
 				1B47E3BD216FE34600940349 /* DependencyKey.swift */,
 				1B47E3D8216FE34700940349 /* DependencyRegistryType.swift */,
+				1BBFD51423A9A11700A7C3ED /* Injected.swift */,
 				1B6B13D2217A7A9F004C1E76 /* LifecycleType.swift */,
 			);
 			path = Relay;
@@ -827,6 +838,7 @@
 				1B47E405216FE34700940349 /* DependencyTypeKey.swift in Sources */,
 				1B47E40D216FE34700940349 /* InjectDependenciesArgumentParser.swift in Sources */,
 				1B47E419216FE34700940349 /* DependencyInjectionInstruction.swift in Sources */,
+				1BBFD51523A9A11700A7C3ED /* Injected.swift in Sources */,
 				1B47E48521700A2B00940349 /* LaunchArgument.swift in Sources */,
 				1B47E421216FE34700940349 /* DependencyTypeIndexable.swift in Sources */,
 				1B6B13D3217A7A9F004C1E76 /* LifecycleType.swift in Sources */,
@@ -858,6 +870,7 @@
 				1B47E406216FE34700940349 /* DependencyTypeKey.swift in Sources */,
 				1B47E40E216FE34700940349 /* InjectDependenciesArgumentParser.swift in Sources */,
 				1B47E41A216FE34700940349 /* DependencyInjectionInstruction.swift in Sources */,
+				1BBFD51623A9A11700A7C3ED /* Injected.swift in Sources */,
 				1B47E48621700A2B00940349 /* LaunchArgument.swift in Sources */,
 				1B47E422216FE34700940349 /* DependencyTypeIndexable.swift in Sources */,
 				1B6B13D4217A7A9F004C1E76 /* LifecycleType.swift in Sources */,
@@ -889,6 +902,7 @@
 				1B47E407216FE34700940349 /* DependencyTypeKey.swift in Sources */,
 				1B47E40F216FE34700940349 /* InjectDependenciesArgumentParser.swift in Sources */,
 				1B47E41B216FE34700940349 /* DependencyInjectionInstruction.swift in Sources */,
+				1BBFD51723A9A11700A7C3ED /* Injected.swift in Sources */,
 				1B47E48721700A2B00940349 /* LaunchArgument.swift in Sources */,
 				1B47E423216FE34700940349 /* DependencyTypeIndexable.swift in Sources */,
 				1B6B13D5217A7A9F004C1E76 /* LifecycleType.swift in Sources */,
@@ -920,6 +934,7 @@
 				1B47E408216FE34700940349 /* DependencyTypeKey.swift in Sources */,
 				1B47E410216FE34700940349 /* InjectDependenciesArgumentParser.swift in Sources */,
 				1B47E41C216FE34700940349 /* DependencyInjectionInstruction.swift in Sources */,
+				1BBFD51823A9A11700A7C3ED /* Injected.swift in Sources */,
 				1B47E48821700A2B00940349 /* LaunchArgument.swift in Sources */,
 				1B47E424216FE34700940349 /* DependencyTypeIndexable.swift in Sources */,
 				1B6B13D6217A7A9F004C1E76 /* LifecycleType.swift in Sources */,
@@ -934,6 +949,7 @@
 				1B47E453216FE49A00940349 /* DependencyInjectionInstructionTests.swift in Sources */,
 				1B47E471216FE49B00940349 /* DynamicDependencyRegistryTests.swift in Sources */,
 				1B47E46E216FE49B00940349 /* DynamicDependencyTestUtilities.swift in Sources */,
+				1B5F7A8D23A9DD1B00E1E98B /* InjectedTests.swift in Sources */,
 				1B2D6B9C2171011800CCB604 /* DependencyInstructionLaunchArgumentTests.swift in Sources */,
 				1B80388D22B981EA00A48C56 /* DynamicTypes.swift in Sources */,
 				1B47E468216FE49B00940349 /* DependencyContainerTests.swift in Sources */,
@@ -952,6 +968,7 @@
 				1B47E454216FE49A00940349 /* DependencyInjectionInstructionTests.swift in Sources */,
 				1B47E472216FE49B00940349 /* DynamicDependencyRegistryTests.swift in Sources */,
 				1B47E46F216FE49B00940349 /* DynamicDependencyTestUtilities.swift in Sources */,
+				1B5F7A8E23A9DD1B00E1E98B /* InjectedTests.swift in Sources */,
 				1B2D6B9D2171011800CCB604 /* DependencyInstructionLaunchArgumentTests.swift in Sources */,
 				1B80388E22B981EA00A48C56 /* DynamicTypes.swift in Sources */,
 				1B47E469216FE49B00940349 /* DependencyContainerTests.swift in Sources */,
@@ -972,6 +989,7 @@
 				1B170ED221ED047000564994 /* OptionalExtensionTests.swift in Sources */,
 				1B47E473216FE49B00940349 /* DynamicDependencyRegistryTests.swift in Sources */,
 				1B2D6B9E2171011800CCB604 /* DependencyInstructionLaunchArgumentTests.swift in Sources */,
+				1B5F7A8F23A9DD1B00E1E98B /* InjectedTests.swift in Sources */,
 				1B47E46A216FE49B00940349 /* DependencyContainerTests.swift in Sources */,
 				1B7798102171480D00DE8477 /* XCTestManifests.swift in Sources */,
 				1B80388F22B981EA00A48C56 /* DynamicTypes.swift in Sources */,
