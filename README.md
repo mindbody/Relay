@@ -83,7 +83,7 @@ final class DefaultDependencyRegistry: DependencyRegistryType {
     }
     /// Recursive dependencies are lazily resolved
     DependencyContainer.global.register(MyViewControllerDataStoreType.self) { container in
-        MyViewControllerDataStore(backendService: container.resolve(MyBackendServiceType.self))
+        MyViewControllerDataStore(backendService: container.resolve())
     }
     /// etc.
   }
@@ -134,6 +134,29 @@ final class SampleViewController {
 
 }
 ```
+
+With Swift 5.1, Relay supports auto-injection via a custom [property wrapper](https://docs.swift.org/swift-book/LanguageGuide/Properties.html#ID617). This allows your interface to be more declarative and for dependency access semantics to be more prescriptive:
+
+```swift
+final class MyDependentComponent {
+
+  @Injected var foo: FooType
+  @Injected(scope: .custom) var bar: BarType
+
+}
+```
+
+This is equivalent to:
+
+```swift
+final class MyDependentComponent {
+
+  lazy var foo: FooType = DependencyContainer.global.resolve()
+  lazy var bar: BarType = DependencyContainer.container(for: .custom).resolve()
+
+}
+```
+
 ---
 
 ## Dynamic Dependencies
