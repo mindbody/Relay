@@ -10,6 +10,18 @@
 - None
 
 
+## 0.3.2
+
+#### Enhancements
+- Add `@Injectable` property wrapper
+
+#### Bug Fixes
+- None
+
+#### Other
+- None
+
+
 ## 0.3.1
 
 #### Enhancements
