@@ -1,0 +1,30 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'macos-latest'
+
+variables:
+  - group: mobile-shared-secrets
+
+jobs:
+  - job: tests
+    displayName: 'Run Tests'
+    steps:
+    - script: |
+        swift --version
+      displayName: 'Swift version'
+    - script: |
+        swiftlint version
+      displayName: 'Swift Lint version'
+    - script: |
+        swiftlint lint --quiet
+      displayName: 'Lint'
+    - script: |
+        git config --global url."https://$GITHUB_ACCESS_TOKEN@github.com/mindbody".insteadOf "https://github.com/mindbody"
+      displayName: 'Update Git URLs'
+      env:
+        GITHUB_ACCESS_TOKEN: $(GITHUB_ACCESS_TOKEN)
+    - script: |
+        xcodebuild test -workspace Relay.xcworkspace -scheme Relay-iOS -destination 'platform=iOS Simulator,name=iPhone 8,OS=latest'
+      displayName: xcodebuild test
