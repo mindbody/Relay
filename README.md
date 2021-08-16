@@ -28,7 +28,7 @@ This framework aims to champion the [Test Pyramid](https://martinfowler.com/arti
   - [Container Scope](#container-scope)
 
 ## Requirements
-- iOS 8.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+ / Linux
+- iOS 10.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+ / Linux
 - Xcode 10+ / Swift 4.2+
 
 ## Installation
