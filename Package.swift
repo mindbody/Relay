@@ -13,7 +13,7 @@ let package = Package(
     name: "Relay",
     platforms: [
         .macOS(.v10_10),
-        .iOS(.v8),
+        .iOS(.v12),
         .tvOS(.v9),
         .watchOS(.v2)
     ],
