@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
 	spec.summary = 'Swift Dynamic Dependency Injection for modern testing'
 	spec.source = { :git => 'https://github.com/mindbody/Relay.git', :tag => $version }
 	spec.source_files = 'Sources/**/*.swift'
-	spec.ios.deployment_target = '10.0'
+	spec.ios.deployment_target = '12.0'
 	spec.watchos.deployment_target = '2.0'
 	spec.tvos.deployment_target = '9.0'
 	spec.osx.deployment_target = '10.10'
